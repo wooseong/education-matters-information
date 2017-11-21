@@ -80,7 +80,7 @@ public class MainPage extends JPanel {
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		g.drawImage(img, 171, 0,844,713, null);
+		g.drawImage(img, 171, 0,938,720, null);
 	}
 	
 	private class LoginListener implements ActionListener {
