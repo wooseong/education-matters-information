@@ -24,9 +24,6 @@ public class SearchLecture extends JPanel {
 
 		setBackground(new Color(0xDDDDDD));
 		setLayout(null);
-		
-		table = new SelfCreateTable("Select * from Lecture");
-		add(table);
 
 		comboBoxPanel = new JPanel();
 		comboBoxPanel.setBounds(5, 5, 1020, 100);

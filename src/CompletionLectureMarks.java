@@ -12,20 +12,26 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
-public class CompletionLectureMarks extends JPanel{
+public class CompletionLectureMarks extends JPanel {
 	/*
-	 * ID text, PW text, Name text, Birth date, Enter date, College text, Dep text, Grade text, Listening_Class text, Fin_class text, scholar text, isPause boolean)"
-#     #   학번     비번                            이름          생일YMD      입학일YMD      대학                             학과                 학년      수강중{수업:[중간,기말]}기이수{학수번호:학점} 장학{날짜:금액}        is휴학 T/F
-# )
+	 * ID text, PW text, Name text, Birth date, Enter date, College text, Dep text,
+	 * Grade text, # # 학번 비번 이름 생일YMD 입학일YMD 대학 학과 학년 # )Listening_Class text,
+	 * Fin_class text, scholar text, isPause boolean)" 수강중{수업:[중간,기말]}기이수{학수번호:학점}
+	 * 장학{날짜:금액} is휴학 T/F
+	 * 
 	 */
-	private JPanel informationPanel;
-	private JLabel IDLabel, nameLabel, birthLabel, enterLabel, collegeLabel,
-					classifyLabel, lectureNameLabel, professorLabel;
-	private JTextField departmentTextField,
-					lectureNameTextField, professorTextField, textField;
-	private JButton searchButton;
-
+	private JPanel 			informationPanel;
+	private JLabel 			IDLabel, nameLabel, birthLabel, enterLabel, 
+							collegeDepGradeLabel, isPauseLabel;
+	
+	private JTextField		IDTextField, nameTextField, birthTextField, enterTextField,
+							collegeDepGradeTextField, isPauseTextField;
+	
+	private String 			IDStr, nameStr, birthStr, enterStr, collegeStr,
+							DepStr, gradeStr, isPauseStr;
+	
 	public CompletionLectureMarks() {
+		init();
 		setPreferredSize(new Dimension(1030, 570));
 
 		setBackground(new Color(0xDDDDDD));
@@ -38,75 +44,61 @@ public class CompletionLectureMarks extends JPanel{
 		informationPanel.setBorder(BorderFactory.createTitledBorder(new LineBorder(Color.lightGray), "학생 기초 정보"));
 		add(informationPanel);
 
-		yearLabel = new JLabel("학번");
-		yearLabel.setBounds(20, 20, 60, 30);
-		informationPanel.add(yearLabel);
+		IDLabel = new JLabel("학번");
+		IDLabel.setBounds(20, 20, 30, 30);
+		informationPanel.add(IDLabel);
 
-		yearCombo = new JComboBox();
-		yearCombo.addItem("2017/2학기");
-		yearCombo.addItem("2017/1학기");
-		yearCombo.setBounds(90, 20, 120, 30);
-		yearCombo.setEditable(false);
-		comboBoxPanel.add(yearCombo);
-
-		departmentLabel = new JLabel("개설학과전공");
-		departmentLabel.setBounds(240, 20, 80, 30);
-		comboBoxPanel.add(departmentLabel);
-
-		departmentTextField = new JTextField("컴퓨터공학과 [2922 학부] 전자정보공학대학");
-		departmentTextField.setBounds(330, 20, 300, 30);
-		departmentTextField.setEditable(false);
-		comboBoxPanel.add(departmentTextField);
-
-		classifyLabel = new JLabel("이수구분");
-		classifyLabel.setBounds(20, 60, 60, 30);
-		comboBoxPanel.add(classifyLabel);
-
-		classifyCombo = new JComboBox();
-		classifyCombo.addItem("전공필수");
-		classifyCombo.addItem("전공선택");
-		classifyCombo.setBounds(90, 60, 130, 30);
-		classifyCombo.setEditable(false);
-		comboBoxPanel.add(classifyCombo);
-
-		lectureNameLabel = new JLabel("교과목명");
-		lectureNameLabel.setBounds(250, 60, 60, 30);
-		comboBoxPanel.add(lectureNameLabel);
-
-		lectureNameTextField = new JTextField("");
-		lectureNameTextField.setBounds(320, 60, 230, 30);
-		lectureNameTextField.setEditable(true);
-		comboBoxPanel.add(lectureNameTextField);
-
-		professorLabel = new JLabel("교수명");
-		professorLabel.setBounds(580, 60, 50, 30);
-		comboBoxPanel.add(professorLabel);
-
-		professorTextField = new JTextField("");
-		professorTextField.setBounds(640, 60, 200, 30);
-		professorTextField.setEditable(true);
-		comboBoxPanel.add(professorTextField);
-
-		searchButton = new JButton("조회");
-		searchButton.setFont(new Font("나눔고딕", Font.BOLD, 15));
-		searchButton.setBounds(900, 20, 80, 30);
-		comboBoxPanel.add(searchButton);
-		searchButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				String str1 = (String) yearCombo.getSelectedItem(),
-						str2 = (String) classifyCombo.getSelectedItem(),
-						str3 = (String) departmentTextField.getText(),
-						str4 = (String) lectureNameTextField.getText(),
-						str5 = (String) professorTextField.getText(),
-						str = " " + str1 + " " + str2 + " " + str3 + " " + str4 + " " + str5;
-				textField.setText(str);
-			}
-		});
+		IDTextField = new JTextField(IDStr);
+		IDTextField.setBounds(60, 20, 100, 30);
+		IDTextField.setEditable(false);
+		informationPanel.add(IDTextField);
 		
-		textField = new JTextField();
-		textField.setColumns(100);
-		textField.setBounds(200, 500, 500, 30);
-		textField.setEditable(false);
-		add(textField);
+		nameLabel = new JLabel("성명");
+		nameLabel.setBounds(190, 20, 30, 30);
+		informationPanel.add(nameLabel);
+
+		nameTextField = new JTextField(nameStr);
+		nameTextField.setBounds(230, 20, 100, 30);
+		nameTextField.setEditable(false);
+		informationPanel.add(nameTextField);
+		
+		birthLabel = new JLabel("생년월일");
+		birthLabel.setBounds(370, 20, 60, 30);
+		informationPanel.add(birthLabel);
+
+		birthTextField = new JTextField(birthStr);
+		birthTextField.setBounds(440, 20, 100, 30);
+		birthTextField.setEditable(false);
+		informationPanel.add(birthTextField);
+		
+		enterLabel = new JLabel("입학일자");
+		enterLabel.setBounds(570, 20, 60, 30);
+		informationPanel.add(enterLabel);
+
+		enterTextField = new JTextField(enterStr);
+		enterTextField.setBounds(640, 20, 100, 30);
+		enterTextField.setEditable(false);
+		informationPanel.add(enterTextField);
+		
+		collegeDepGradeLabel = new JLabel("소속 및 학년");
+		collegeDepGradeLabel.setBounds(20, 60, 80, 30);
+		informationPanel.add(collegeDepGradeLabel);
+
+		collegeDepGradeTextField = new JTextField(collegeStr + "  " + DepStr + "  " + gradeStr);
+		collegeDepGradeTextField.setBounds(110, 60, 250, 30);
+		collegeDepGradeTextField.setEditable(false);
+		informationPanel.add(collegeDepGradeTextField);
+
+		//enterLabel, collegeLabel, DepLabel, GradeLabel, isPauseLabel;
+		}
+	private void init() {
+		IDStr ="16011037";
+		nameStr = "신우성";
+		birthStr ="1996-03-10";
+		enterStr = "2016-03-02";
+		collegeStr = "전자정보공학대학";
+		DepStr = "컴퓨터공학과";
+		gradeStr = "2학년";
+		isPauseStr = "2";
 	}
 }
