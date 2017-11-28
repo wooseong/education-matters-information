@@ -8,41 +8,48 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 public class SelfCreateTable extends JScrollPane {
+	
+	// 상수 선언
+	public static final boolean FRONT = true;
+	public static final boolean BACK  = false;
+	
+	// instance data
 	private JTable table;
 	private DBController db;
-	private String[][] data;
-	private String[] columName;
+	private DefaultTableModel tableModel; 
 	
-	public SelfCreateTable(String query) {
+	// constructor
+	public SelfCreateTable()									{	}
+	public SelfCreateTable(String query)						{ this.makeTable(query); }
+	public SelfCreateTable(Object[][] data, Object[] columName)	{ this.makeTable(data, columName); }
+
+	// method
+	public void makeTable(String query) {
 		db = new DBController("./DB/test.db");
 		db.executeQuery(query);
 		
 		try {
-			this.table = new JTable(buildTableModel(db.getResultSet()));
+			this.tableModel = buildTableModel(db.getResultSet());
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		this.table = new JTable(this.tableModel);
 		this.setViewportView(this.table);
 	}
-	public SelfCreateTable(String[][] data, String[] columName) {
-		this.data = data;
-		this.columName = columName;
-		this.table = new JTable(this.data, this.columName);
+	public void makeTable(Object[][] data, Object[] columName) {
+		
+		this.tableModel = new DefaultTableModel(data, columName);
+		
+		this.table = new JTable(this.tableModel);
 		this.setViewportView(this.table);
 	}
-	
-	public String[][] getData(){
-		return this.data;
-	}
-	public void setData(String[][] data) {
-		this.data = data;
-	}
-	public String[] getColumName() {
-		return this.columName;
-	}
-	public void setColumName(String[] columName) {
-		this.columName = columName;
+	public void makeTable(DefaultTableModel tableModel) {
+		
+		this.tableModel = tableModel;
+		this.table = new JTable(this.tableModel);
+		this.setViewportView(this.table);
 	}
 	
 	public static DefaultTableModel buildTableModel(ResultSet rs)
