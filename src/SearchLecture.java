@@ -9,14 +9,14 @@ import javax.swing.*;
 import javax.swing.border.LineBorder;
 
 public class SearchLecture extends JPanel {
-	
+
 	private JPanel comboBoxPanel;
 	private JLabel yearLabel, departmentLabel, classifyLabel, lectureNameLabel, professorLabel;
 	private JComboBox yearCombo, classifyCombo;
 	private JTextField departmentTextField, lectureNameTextField, professorTextField;
 	private JButton searchButton;
 	private searchActionListener searchAction;
-	
+
 	private SelfCreateTable table;
 
 	public SearchLecture() {
@@ -24,7 +24,7 @@ public class SearchLecture extends JPanel {
 
 		setBackground(new Color(0xEEDDDD));
 		setLayout(null);
-				
+
 		comboBoxPanel = new JPanel();
 		comboBoxPanel.setBounds(5, 5, 1020, 100);
 		comboBoxPanel.setBackground(new Color(0xEEEEEE));
@@ -82,7 +82,7 @@ public class SearchLecture extends JPanel {
 		comboBoxPanel.add(professorTextField);
 
 		searchAction = new searchActionListener();
-		
+
 		searchButton = new JButton("조회");
 		searchButton.setFont(new Font("나눔고딕", Font.BOLD, 15));
 		searchButton.setBounds(900, 20, 80, 30);
@@ -101,9 +101,10 @@ public class SearchLecture extends JPanel {
 					strLectureName 	= (String) lectureNameTextField.getText(), // 교과목명
 					strProfessor 	= (String) professorTextField.getText(), // 교수명
 					str 			= " " + stryear_semester + " " + strClassify + " " + strLectureName + " " + strProfessor;
-			
-			String query = "select * from Lecture where Classify='" + strClassify + "' and  year_semester='" + stryear_semester + "' and Name like '" + strLectureName + "%' and prof like '" + strProfessor + "%'";
-			
+			String select = "number, class, name, classify, grade, credit, credit_theory, credit_practice, lectureTime, lecture_room, prof, language";
+			String query = "select " + select + " from lecture where classify='" + strClassify + "' and  year='" + stryear_semester.substring(0, 6) + "' and name like '" + strLectureName + "%' and prof like '" + strProfessor + "%'";
+			System.out.println(query);
+
 			table.makeTable(query);
 			}
 	}
