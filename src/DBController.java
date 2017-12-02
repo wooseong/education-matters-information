@@ -1,4 +1,5 @@
 import java.sql.*;
+import java.util.ArrayList;
 
 /**
  * Class for control DB file
@@ -170,6 +171,28 @@ public class DBController {
 			System.err.println( e.getClass().getName() + ": " + e.getMessage() );
 			return null;
 		}
+	}
+
+	public static String[][] toStringList(ResultSet rs) throws SQLException{		
+		ArrayList<ArrayList<String>> list = new ArrayList<ArrayList<String>>();
+		ArrayList<String> temp = new ArrayList<String>();
+		while(rs.next()) {
+			for(int i=0;i<rs.getMetaData().getColumnCount(); i++) {
+				temp.add(rs.getString(i+1));
+			}
+			list.add(temp);
+			temp = new ArrayList<String>();
+		}
+		
+		String[][] str = new String[list.size()][];
+		for (int i=0;i<str.length;i++) {
+			str[i] = new String[list.get(i).size()];
+			for(int j=0;j<str[i].length;j++) {
+				str[i][j] = new String(list.get(i).get(j));
+			}
+		}
+		
+		return str;
 	}
 
 	/**

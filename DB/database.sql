@@ -30,6 +30,12 @@ CREATE TABLE 'lecture' (
     'year'              varchar(15) null    --년도/학기
 );
 
+CREATE TABLE 'interest' (
+    'id'            varchar(15) null,   --학번
+    'lecture'       varchar(15) null,   --수업번호
+    'class'         varchar(15) null    --분반
+);
+
 CREATE TABLE '2017/2' (
     'id'            varchar(15) null,   --학번
     'lecture'       varchar(15) null,   --수업번호
@@ -37,7 +43,7 @@ CREATE TABLE '2017/2' (
     'midterm'       varchar(15) null,   --중간고사성적
     'final'         varchar(15) null,   --기말성적
     'score'         varchar(15) null,   --학점
-    'semester'      varchar(15) null   --학기
+    'semester'      varchar(15) null    --학기
 );
 
 CREATE TABLE '2017/1' (
@@ -47,7 +53,7 @@ CREATE TABLE '2017/1' (
     'midterm'       varchar(15) null,   --중간고사성적
     'final'         varchar(15) null,   --기말성적
     'score'         varchar(15) null,   --학점
-    'semester'      varchar(15) null   --학기
+    'semester'      varchar(15) null    --학기
 );
 
 insert into 'student' values (
@@ -174,4 +180,16 @@ insert into '2017/1' values (
     '45',
     'A',
     '4'
+);
+
+INSERT INTO 'interest' VALUES(
+    '15011107',
+    '001111',
+    '001'
+);
+
+INSERT INTO 'interest' VALUES(
+    '1',
+    '001111',
+    '001'
 );
