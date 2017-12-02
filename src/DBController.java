@@ -2,9 +2,9 @@ import java.sql.*;
 
 /**
  * Class for control DB file
- * 
+ *
  * @author Bang il sub
- * 
+ *
  * HOW TO USE
  *	1. Call class and connect db file
  *	2. execute your query
@@ -12,16 +12,16 @@ import java.sql.*;
  *			@see java.sql.PreparedStatement.prepareStatement
  *	3. Get data what you want!
  *
- * 
+ *
  * Example
  * 	DBController db = new DBController("test.db");
  *  // ResultSet rs = db.executeQuery("select name from table where userID=" + userID + " and age=" + age); // insecure
  * 	ResultSet rs = db.executeQuery("select name from table where userID=? and age=?", userID, age);
- * 
+ *
  * 	// rs.getType("Subject what you want");
  * 	rs.getInt("studentID");
  * 	rs.getString("name");
- * 
+ *
  * 	db.disconnectDB();
  * 	try { rs.close(); } catch (Exception e) {  }
  */
@@ -30,7 +30,7 @@ public class DBController {
 	// instance data
 	private Connection conn;
 	private ResultSet rs;
-	
+
 	//constructor
 	public DBController(String filename) {
 		this.connectDB(filename);
@@ -40,9 +40,9 @@ public class DBController {
 		this.conn = null;
 		this.rs = null;
 	}
-	
+
 	public ResultSet getResultSet() { return this.rs; }
-	
+
 	/**
 	 * method for connection sqlite DB file
 	 * @param filename DB file to connect
@@ -52,7 +52,7 @@ public class DBController {
 		try {
 			String url = "jdbc:sqlite:" + filename;
 			this.conn = DriverManager.getConnection(url);
-			
+
 			if (conn != null) { return true; }
 			else { return false; }
 		} catch (SQLException sqex) {
@@ -61,7 +61,7 @@ public class DBController {
 			return false;
 		}
 	}
-	
+
 	/**
 	 * method for disconnect sqlite DB file
 	 * @return true if success, false if fail
@@ -71,7 +71,7 @@ public class DBController {
 //	    try { ps.close(); } catch (Exception e) { /* ignored */ }
 	    try { conn.close(); } catch (Exception e) { /* ignored */ }
 	}
-	
+
 	/**
 	 * insecure method for execute query
 	 * @param query query to execute
@@ -85,7 +85,7 @@ public class DBController {
 			System.err.println(e.getClass().getName() + ": " + e.getMessage());
 		}
 	}
-	
+
 	/**
 	 * secure method for execute query
 	 * @param query	Query to execute. String with '?'
@@ -99,12 +99,12 @@ public class DBController {
 			for (String str : args){
 				stmt.setString(parameterIndex++, str);
 			}
-			rs = stmt.executeQuery();			
+			rs = stmt.executeQuery();
 		} catch(Exception e) {
 			System.err.println( e.getClass().getName() + ": " + e.getMessage() );
 		}
 	}
-	
+
 	/**
 	 * insecure method for execute query withdout declare
 	 * @param filename	DB file to execute query
@@ -115,18 +115,18 @@ public class DBController {
 		ResultSet rs = null;
 		Connection conn = null;
 		Statement stmt = null;
-		
+
 		try {
 			String url = "jdbc:sqlite:/" + filename;
 			conn = DriverManager.getConnection(url);
-			
+
 			if (conn == null) {
 				return null;
 			}
 			else {
 				stmt = conn.createStatement();
 				rs = stmt.executeQuery(query);
-				
+
 			    return rs;
 			}
 		} catch (Exception e) {
@@ -134,7 +134,7 @@ public class DBController {
 			return null;
 		}
 	}
-	
+
 	/**
 	 * secure method for execute query without declare
 	 * @param filename	DB file to execute query
@@ -147,23 +147,23 @@ public class DBController {
 		ResultSet rs = null;
 		Connection conn = null;
 		PreparedStatement stmt = null;
-		
+
 		try {
 			String url = "jdbc:sqlite:" + filename;
 			conn = DriverManager.getConnection(url);
-			
+
 			if (conn == null) {
 				return null;
 			}
 			else {
 				stmt = conn.prepareStatement(query);
-				
+
 				int parameterIndex = 0;
 				for(String str : args) {
 					stmt.setString(parameterIndex++, str);
 				}
 				rs = stmt.executeQuery();
-				
+
 				return rs;
 			}
 		} catch (Exception e) {
@@ -171,24 +171,34 @@ public class DBController {
 			return null;
 		}
 	}
-	
+
+	/**
+	 * 수강신청 메소드
+	 * @param studentID    학번
+	 * @param lectureNum   학수번호
+	 * @param classNum     분반
+	 * @param year         년도/학기
+	 * @param semester     학생의 현재 학기
+	 * @return             DBconf.state
+	 * @throws SQLException
+	 */
 	public static int ClassEnroll(String studentID, String lectureNum, String classNum, String year, String semester)
 			throws SQLException {
-		
+
 		String url = "jdbc:sqlite:" + DBconf.DB;
 		int seat = 0;
-		
+
 		Connection conn = DriverManager.getConnection(url);
 		Statement stmt = null;
 		ResultSet rs = null;
-		
+
 		int resultStatement = DBconf.SQL_NO_DATA;
-		
+
 		stmt = conn.createStatement();
 		rs = stmt.executeQuery("select maxStudent from lecture where number='" + lectureNum + "' and class='" + classNum + "' and year='" + year + "'");
 		if(rs.next()) {
 			seat = rs.getInt("maxStudent");
-			
+
 			if(seat != 0) {
 				rs = stmt.executeQuery("select id from '" + year + "' where id='" + studentID + "' and lecture='" + lectureNum + "' and class='" + classNum + "' and semester='" + semester + "'");
 				if(rs.next()) {
@@ -208,12 +218,12 @@ public class DBController {
 			System.out.println("SQL_NO_DATA");
 			resultStatement = DBconf.SQL_NO_DATA;
 		}
-		
+
 		stmt.close();
 		rs.close();
 		conn.close();
-		
+
 		return resultStatement;
 	}
-	
+
 }
