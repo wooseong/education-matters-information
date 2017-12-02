@@ -172,4 +172,48 @@ public class DBController {
 		}
 	}
 	
+	public static int ClassEnroll(String studentID, String lectureNum, String classNum, String year, String semester)
+			throws SQLException {
+		
+		String url = "jdbc:sqlite:" + DBconf.DB;
+		int seat = 0;
+		
+		Connection conn = DriverManager.getConnection(url);
+		Statement stmt = null;
+		ResultSet rs = null;
+		
+		int resultStatement = DBconf.SQL_NO_DATA;
+		
+		stmt = conn.createStatement();
+		rs = stmt.executeQuery("select maxStudent from lecture where number='" + lectureNum + "' and class='" + classNum + "' and year='" + year + "'");
+		if(rs.next()) {
+			seat = rs.getInt("maxStudent");
+			
+			if(seat != 0) {
+				rs = stmt.executeQuery("select id from '" + year + "' where id='" + studentID + "' and lecture='" + lectureNum + "' and class='" + classNum + "' and semester='" + semester + "'");
+				if(rs.next()) {
+					System.out.println("COURCE_ENROLL_EXIST");
+					resultStatement = DBconf.COURCE_ENROLL_EXIST;
+				}else {
+					stmt.execute("insert into '" + year + "' values ('" + studentID + "', '" + lectureNum + "', '" + classNum + "', '', '', '', '" + semester + "')");
+					stmt.execute("update lecture set maxStudent=" + (seat-1) + " where number='" + lectureNum + "' and class='" + classNum + "' and year='" + year + "'");
+					System.out.println("COURCE_ENROLL_SUCCESS");
+					resultStatement = DBconf.COURCE_ENROLL_SUCCESS;
+				}
+			} else {
+				System.out.println("COURCE_ENROLL_FAIL_NO_MORE_SEAT");
+				resultStatement = DBconf.COURCE_ENROLL_FAIL_NO_MORE_SEAT;
+			}
+		} else {
+			System.out.println("SQL_NO_DATA");
+			resultStatement = DBconf.SQL_NO_DATA;
+		}
+		
+		stmt.close();
+		rs.close();
+		conn.close();
+		
+		return resultStatement;
+	}
+	
 }
