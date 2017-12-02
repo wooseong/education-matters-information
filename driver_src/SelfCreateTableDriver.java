@@ -23,6 +23,15 @@ public class SelfCreateTableDriver {
 		
 		SelfCreateTable table = new SelfCreateTable();
 		table.makeCheckboxTable(data, columName);
+		
+		String[][] str = table.getChecked();
+		
+		for(String[] inner:str) {
+			for(String iiner:inner) {
+				System.out.print(iiner + ' ');
+			}
+			System.out.println("");
+		}
 //		SelfCreateTable table = new SelfCreateTable(data, columName);
 //		SelfCreateTable table = new SelfCreateTable("select ID, Name from Student where ID like '15%'");
 //		SelfCreateTable table = new SelfCreateTable("select Name, ID from Student where ID like '15%'");
