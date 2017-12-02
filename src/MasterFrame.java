@@ -10,7 +10,6 @@ public class MasterFrame extends JFrame {
 	SubPage subPage;
 	String studentID;
 
-
 	public MainPage getMainPage() {
 		return mainPage;
 	}
@@ -20,7 +19,6 @@ public class MasterFrame extends JFrame {
 	public void setStudentID(String str) {
 		this.studentID = str;
 	}
-
 	
 	public MasterFrame() throws HeadlessException {
 		super();

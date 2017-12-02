@@ -22,6 +22,7 @@ public class SubPage extends JPanel{
     private CompletionLectureMarks completionLectureMarks;
     private Applicationlecture applicationlecture;
     private InterestLecture interestLecture;
+	private AdminPage adminPage;
 
 	public SignUpPage getSignUpPage() {
 		return signUpPage;
@@ -41,6 +42,9 @@ public class SubPage extends JPanel{
     public InterestLecture getInterestLecture() {
         return interestLecture;
     }
+    public AdminPage getAdminPage() {
+        return adminPage;
+    }
     
 	public SubPage(MasterFrame master) {
 		super();
@@ -52,6 +56,7 @@ public class SubPage extends JPanel{
 		this.listener = new LogoutListener();
 		this.signUpPage = new SignUpPage(this);
 		this.signUpAccessPage = new SignUpAccessPage(this);
+		this.adminPage = new AdminPage();
 
 		this.initLeft();
 		this.initTop();
