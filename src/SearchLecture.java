@@ -57,6 +57,7 @@ public class SearchLecture extends JPanel {
 		comboBoxPanel.add(classifyLabel);
 
 		classifyCombo = new JComboBox();
+		classifyCombo.addItem("전체");
 		classifyCombo.addItem("전공필수");
 		classifyCombo.addItem("전공선택");
 		classifyCombo.setBounds(90, 60, 120, 25);
@@ -102,8 +103,13 @@ public class SearchLecture extends JPanel {
 					strProfessor 	= (String) professorTextField.getText(), // 교수명
 					str 			= " " + stryear_semester + " " + strClassify + " " + strLectureName + " " + strProfessor;
 			String select = "number, class, name, classify, grade, credit, credit_theory, credit_practice, lectureTime, lecture_room, prof, language";
-			String query = "select " + select + " from lecture where classify='" + strClassify + "' and  year='" + stryear_semester.substring(0, 6) + "' and name like '" + strLectureName + "%' and prof like '" + strProfessor + "%'";
-			System.out.println(query);
+			String query;
+			if(strClassify.equals("전체")){
+				query = "select " + select + " from lecture where year='" + stryear_semester.substring(0, 6) + "' and name like '" + strLectureName + "%' and prof like '" + strProfessor + "%'";
+			}
+			else {
+				query = "select " + select + " from lecture where classify='" + strClassify + "' and  year='" + stryear_semester.substring(0, 6) + "' and name like '" + strLectureName + "%' and prof like '" + strProfessor + "%'";
+			}
 
 			table.makeTable(query);
 			}

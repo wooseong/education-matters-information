@@ -94,8 +94,8 @@ public class MainPage extends JPanel {
 				JOptionPane.showMessageDialog(btnLogin, "아이디를 입력해 주세요");
 			}
 			else {
-				db = new DBController("./DB/test.db");
-				db.executeQuery("select Name from Student where ID=" + ID + " and PW=" + new String(PW, 0, PW.length));
+				db = new DBController(DBconf.DB);
+				db.executeQuery("select name from student where id='" + ID + "' and pw='" + new String(PW, 0, PW.length)+"'");
 				try {
 					if (db.getResultSet().next()) {
 						master.pageDirection(master.getSubPage());

@@ -43,7 +43,7 @@ public class SubPage extends JPanel{
 	}	
 	public void initLeft() {
 		this.left = new JPanel();
-		this.left.setBounds(0, 120, 250, 580);
+		this.left.setBounds(0, 120, 250, 600);
 		this.left.setBackground(Color.cyan);
 	}
 	public void initBody() {
