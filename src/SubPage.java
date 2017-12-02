@@ -18,14 +18,34 @@ public class SubPage extends JPanel{
 	private LogoutListener listener;
 	private SignUpPage signUpPage;
 	private SignUpAccessPage signUpAccessPage;
+    private SearchLecture searchLecture;
+    private CompletionLectureMarks completionLectureMarks;
+    private Applicationlecture applicationlecture;
+    private InterestLecture interestLecture;
 	private AdminPage adminPage;
-
-	//TODO: 페이지 두개 생성자에서 할당해주고 get 메소드 만들어주고 페이지 코드에서 페이지디렉션 만들어주기
 
 	public SignUpPage getSignUpPage() {
 		return signUpPage;
 	}
-
+	public SignUpAccessPage getSignUpAccessPage() {
+		return signUpAccessPage;
+	}
+    public SearchLecture getSearchLecture() {
+        return searchLecture;
+    }
+    public CompletionLectureMarks getCompletionLectureMarks() {
+        return completionLectureMarks;
+    }
+    public Applicationlecture getApplicationlecture() {
+        return applicationlecture;
+    }
+    public InterestLecture getInterestLecture() {
+        return interestLecture;
+    }
+    public AdminPage getAdminPage() {
+        return adminPage;
+    }
+    
 	public SubPage(MasterFrame master) {
 		super();
 		this.master = master;
@@ -49,33 +69,25 @@ public class SubPage extends JPanel{
 	}
 
 	public void initLeft() {
-		this.left = new JPanel();
-		this.left.setBounds(0, 150, 300, 1130);
-		this.left.setBackground(Color.cyan);
+		this.left = new MenuPanel(this);
+		this.left.setBounds(0, 120, 250, 600);
+		this.left.setBackground(Color.white);
+
 	}
 	public void initTop() {
 		this.top = new JPanel();
-		this.top.setBounds(0, 0, 1280, 150);
-		this.top.setBackground(Color.pink);
+		this.top.setBounds(0, 0, 1280, 120);
+		this.top.setBackground(Color.white);
 	}
 	public void initBody() {
-		// this.body = new JPanel();
-		this.body = this.adminPage;
-		this.body.setBounds(300, 150, 980, 570);
-		// this.body.setBackground(Color.BLUE);
-		
-	}
-
-	public void showSignUpPage() {
-		this.signUpPage = new SignUpPage(this);
-		this.add(this.signUpPage);
-		// 여기서 수강신청 페이지로 전환
+		this.body = new JPanel();
+		this.body.setBounds(250, 120, 1030, 600);
 	}
 
 	public void changeBody(JPanel panel) {
 		this.remove(this.body);
 		this.body = panel;
-		this.body.setBounds(300, 150, 980, 570);
+		this.body.setBounds(250, 120, 1030, 600);
 		this.add(this.body);
 		this.revalidate();
 		this.repaint();
@@ -97,5 +109,4 @@ public class SubPage extends JPanel{
 			}
 		}
 	}
-
 }

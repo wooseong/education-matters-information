@@ -8,12 +8,16 @@ public class MasterFrame extends JFrame {
 	
 	MainPage mainPage;
 	SubPage subPage;
+	String studentID;
 
 	public MainPage getMainPage() {
 		return mainPage;
 	}
 	public SubPage getSubPage() {
 		return subPage;
+	}
+	public void setStudentID(String str) {
+		this.studentID = str;
 	}
 	
 	public MasterFrame() throws HeadlessException {
@@ -47,6 +51,4 @@ public class MasterFrame extends JFrame {
 		this.revalidate();
 		this.repaint();
 	}
-	
-	
 }

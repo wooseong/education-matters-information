@@ -23,6 +23,10 @@ public class SelfCreateTable extends JScrollPane {
 	
 	private tableListener listener;
 	
+	public JTable getTable() {
+		return table;
+	}
+	
 	// constructor
 	public SelfCreateTable()									{	}
 	public SelfCreateTable(String query)						{ this.makeTable(query); }
@@ -30,7 +34,7 @@ public class SelfCreateTable extends JScrollPane {
 	
 	// method
 	public void makeTable(String query) {
-		db = new DBController("./DB/test.db");
+		db = new DBController(DBconf.DB);
 		db.executeQuery(query);
 		
 		try {
@@ -72,7 +76,7 @@ public class SelfCreateTable extends JScrollPane {
 	}
 	
 	public void makeCheckboxTable(String query) {
-		db = new DBController("./DB/test.db");
+		db = new DBController(DBconf.DB);
 		db.executeQuery(query);
 		
 		try {

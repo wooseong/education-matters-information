@@ -1,3 +1,4 @@
+import javax.swing.*;
 
 public class Main {
 	
@@ -11,5 +12,4 @@ public class Main {
 		frame.pack();
 		frame.setVisible(true);
 	}
-
 }
