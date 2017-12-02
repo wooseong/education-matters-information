@@ -10,31 +10,42 @@ import javax.swing.JPanel;
 
 public class SubPage extends JPanel{
 
-	MasterFrame master;
-	JPanel top;
-	JPanel left;
-	JPanel body;
-	
-	LogoutListener listener;
-	
+	private MasterFrame master;
+	private JPanel top;
+	private JPanel left;
+	private JPanel body;
+
+	private LogoutListener listener;
+	private SignUpPage signUpPage;
+	private SignUpAccessPage signUpAccessPage;
+
+	//TODO: 페이지 두개 생성자에서 할당해주고 get 메소드 만들어주고 페이지 코드에서 페이지디렉션 만들어주기
+
+	public SignUpPage getSignUpPage() {
+		return signUpPage;
+	}
+
 	public SubPage(MasterFrame master) {
 		super();
 		this.master = master;
 		this.setPreferredSize(new Dimension(1280, 720));
 		this.setBackground(Color.white);
 		this.setLayout(null);
-		
+
 		this.listener = new LogoutListener();
-		
+		this.signUpPage = new SignUpPage(this);
+		this.signUpAccessPage = new SignUpAccessPage(this);
+
 		this.initLeft();
 		this.initTop();
 		this.initBody();
-		
+
 		this.add(top);
 		this.add(left);
 		this.add(body);
+
 	}
-	
+
 	public void initLeft() {
 		this.left = new JPanel();
 		this.left.setBounds(0, 150, 300, 1130);
@@ -46,11 +57,27 @@ public class SubPage extends JPanel{
 		this.top.setBackground(Color.pink);
 	}
 	public void initBody() {
-		this.body = new JPanel();
-		this.body.setBounds(300, 150, 980, 570);
-		this.body.setBackground(Color.BLUE);
+		// this.body = new JPanel();
+		// this.body.setBounds(300, 150, 980, 570);
+		// this.body.setBackground(Color.BLUE);
+		this.body = this.signUpAccessPage;
 	}
-	
+
+	public void showSignUpPage() {
+		this.signUpPage = new SignUpPage(this);
+		this.add(this.signUpPage);
+		// 여기서 수강신청 페이지로 전환
+	}
+
+	public void changeBody(JPanel panel) {
+		this.remove(this.body);
+		this.body = panel;
+		this.body.setBounds(300, 150, 980, 570);
+		this.add(this.body);
+		this.revalidate();
+		this.repaint();
+	}
+
 	private class LogoutListener implements ActionListener {
 		public void actionPerformed(ActionEvent event) {
 			int result;
@@ -67,5 +94,5 @@ public class SubPage extends JPanel{
 			}
 		}
 	}
-	
+
 }
