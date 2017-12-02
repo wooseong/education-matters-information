@@ -90,7 +90,7 @@ public class SearchLecture extends JPanel {
 		comboBoxPanel.add(searchButton);
 
 		table = new SelfCreateTable();
-		table.setBounds(5, 110, 1020, 455);
+		table.setBounds(5, 110, 1020, 465);
 		this.add(table);
 
 	}
