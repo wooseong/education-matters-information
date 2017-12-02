@@ -24,6 +24,9 @@ public class SubPage extends JPanel{
 	public SignUpPage getSignUpPage() {
 		return signUpPage;
 	}
+	public SignUpAccessPage getSignUpAccessPage() {
+		return signUpAccessPage;
+	}
 
 	public SubPage(MasterFrame master) {
 		super();
@@ -47,20 +50,21 @@ public class SubPage extends JPanel{
 	}
 
 	public void initLeft() {
-		this.left = new JPanel();
-		this.left.setBounds(0, 150, 300, 1130);
-		this.left.setBackground(Color.cyan);
+		this.left = new MenuPanel(this);
+		this.left.setBounds(0, 120, 250, 600);
+		this.left.setBackground(Color.white);
 	}
 	public void initTop() {
 		this.top = new JPanel();
-		this.top.setBounds(0, 0, 1280, 150);
+		this.top.setBounds(0, 0, 1280, 120);
 		this.top.setBackground(Color.pink);
 	}
 	public void initBody() {
-		// this.body = new JPanel();
-		// this.body.setBounds(300, 150, 980, 570);
+		this.body = new JPanel();
+//		this.body = this.signUpAccessPage;
+		this.body.setBounds(250, 120, 1030, 600);
 		// this.body.setBackground(Color.BLUE);
-		this.body = this.signUpAccessPage;
+		
 	}
 
 	public void showSignUpPage() {
@@ -72,7 +76,7 @@ public class SubPage extends JPanel{
 	public void changeBody(JPanel panel) {
 		this.remove(this.body);
 		this.body = panel;
-		this.body.setBounds(300, 150, 980, 570);
+		this.body.setBounds(250, 120, 1030, 600);
 		this.add(this.body);
 		this.revalidate();
 		this.repaint();

@@ -20,6 +20,14 @@ public class dbDriver {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		try {
+			DBController.ClassEnroll("3", "001112", "001", "2017/2", "4");
+			DBController.ClassEnroll("4", "001112", "001", "2017/2", "4");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		db.disconnectDB();
 //		try {
 //			DBController.ClassEnroll("15011107", "001111", "001", "2017/2", "5");
