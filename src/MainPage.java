@@ -91,7 +91,7 @@ public class MainPage extends JPanel {
 				JOptionPane.showMessageDialog(btnLogin, "패스워드를 입력해 주세요");
 			}
 			else if(ID == null) {
-				JOptionPane.showMessageDialog(btnLogin, "패스워드를 입력해 주세요");
+				JOptionPane.showMessageDialog(btnLogin, "아이디를 입력해 주세요");
 			}
 			else {
 				db = new DBController("./DB/test.db");

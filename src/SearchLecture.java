@@ -9,25 +9,25 @@ import javax.swing.*;
 import javax.swing.border.LineBorder;
 
 public class SearchLecture extends JPanel {
-	private JPanel comboBoxPanel;
-	private JLabel yearLabel, departmentLabel,
-					classifyLabel, lectureNameLabel, professorLabel;
-	private JComboBox yearCombo, classifyCombo;
-	private JTextField departmentTextField,
-					lectureNameTextField, professorTextField, textField;
-	private JButton searchButton;
-
-	SelfCreateTable table;
 	
+	private JPanel comboBoxPanel;
+	private JLabel yearLabel, departmentLabel, classifyLabel, lectureNameLabel, professorLabel;
+	private JComboBox yearCombo, classifyCombo;
+	private JTextField departmentTextField, lectureNameTextField, professorTextField;
+	private JButton searchButton;
+	private searchActionListener searchAction;
+	
+	private SelfCreateTable table;
+
 	public SearchLecture() {
 		setPreferredSize(new Dimension(1030, 570));
 
-		setBackground(new Color(0xDDDDDD));
+		setBackground(new Color(0xEEDDDD));
 		setLayout(null);
-
+				
 		comboBoxPanel = new JPanel();
 		comboBoxPanel.setBounds(5, 5, 1020, 100);
-		comboBoxPanel.setBackground(new Color(0xDDDDDD));
+		comboBoxPanel.setBackground(new Color(0xEEEEEE));
 		comboBoxPanel.setLayout(null);
 		comboBoxPanel.setBorder(BorderFactory.createTitledBorder(new LineBorder(Color.black), "강좌 조회"));
 		add(comboBoxPanel);
@@ -81,29 +81,30 @@ public class SearchLecture extends JPanel {
 		professorTextField.setEditable(true);
 		comboBoxPanel.add(professorTextField);
 
+		searchAction = new searchActionListener();
+		
 		searchButton = new JButton("조회");
 		searchButton.setFont(new Font("나눔고딕", Font.BOLD, 15));
 		searchButton.setBounds(900, 20, 80, 30);
+		searchButton.addActionListener(searchAction);
 		comboBoxPanel.add(searchButton);
-		searchButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				String 	str1 			= (String) yearCombo.getSelectedItem(), // 학기/년도
-						strClassify 	= (String) classifyCombo.getSelectedItem(), // 이수구분
-						str3 			= (String) departmentTextField.getText(), // 개설학과전공
-						strLectureName 	= (String) lectureNameTextField.getText(), // 교과목명
-						strProfessor 	= (String) professorTextField.getText(), // 교수명
-						str 			= " " + str1 + " " + strClassify + " " + str3 + " " + strLectureName + " " + strProfessor;
-				
-				String query = "select * from Lecture where Classify='" + strClassify + "', Name like '" + strLectureName + "%', prof like '" + strProfessor + "%'";
+
+		table = new SelfCreateTable();
+		table.setBounds(5, 110, 1020, 455);
+		this.add(table);
+
+	}
+	public class searchActionListener implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			String 	stryear_semester= (String) yearCombo.getSelectedItem(), // 학기/년도
+					strClassify 	= (String) classifyCombo.getSelectedItem(), // 이수구분
+					strLectureName 	= (String) lectureNameTextField.getText(), // 교과목명
+					strProfessor 	= (String) professorTextField.getText(), // 교수명
+					str 			= " " + stryear_semester + " " + strClassify + " " + strLectureName + " " + strProfessor;
 			
-				textField.setText(str);
+			String query = "select * from Lecture where Classify='" + strClassify + "' and  year_semester='" + stryear_semester + "' and Name like '" + strLectureName + "%' and prof like '" + strProfessor + "%'";
+			
+			table.makeTable(query);
 			}
-		});
-		
-		textField = new JTextField();
-		textField.setColumns(100);
-		textField.setBounds(200, 500, 500, 30);
-		textField.setEditable(false);
-		add(textField);
 	}
 }
