@@ -29,7 +29,7 @@ public class MenuPanel extends JPanel {
 	
 	private SubPage subPage;
 
-	public MenuPanel(SubPage subPage) {
+	public MenuPanel(SubPage subPage, boolean isAdmin) {
 		super();
 		this.subPage = subPage;
 		
@@ -79,7 +79,10 @@ public class MenuPanel extends JPanel {
 		this.base4.setBackground(new Color(0x465680));
 		this.base4.setForeground(Color.white);
 		this.base4.addMouseListener(menuListener);
+		this.base4.setVisible(isAdmin);
 		this.add(this.base4);
+		
+		
 		
 		this.inner11 = new JLabel("강좌조회");
 		this.inner11.setBounds(this.base1Pt.x, this.base1Pt.y + height, width, height-1);
@@ -122,6 +125,10 @@ public class MenuPanel extends JPanel {
 		this.inner22.addMouseListener(menuListener);
 	}
 	
+	public void adminVisible(boolean isAdmin) {
+		this.base4.setVisible(isAdmin);
+	}
+	
 	private class MenuListener implements MouseListener{
 
 		@Override
@@ -159,24 +166,23 @@ public class MenuPanel extends JPanel {
 				
 				base3.setBounds(base3Pt.x, base3Pt.y, width, height-1);
 				base4.setBounds(base4Pt.x, base4Pt.y, width, height-1);
-			} else if(event == base3) {
+			} else if(event == base3) { // 장학
 //				subPage.changeBody(subPage.getScolarPage());
-			} else if(event == base4) {
-//				subPage.changeBody(subPage.getAdminPage());
-			} else if(event == inner11) {
+			} else if(event == base4) { // 관리자페이지
+				subPage.changeBody(subPage.getAdminPage());
+			} else if(event == inner11) {	// 수업목록
 //				subPage.changeBody(subPage.getLecturePage());
-			} else if(event == inner12) {
-//				subPage.changeBody(subPage.getInterestLecturePage());
-			} else if(event == inner13) {
+			} else if(event == inner12) {	// 관심과목
+				subPage.changeBody(subPage.getInterestLectureAccessPage());
+			} else if(event == inner13) {	// 수강신청
 				subPage.changeBody(subPage.getSignUpAccessPage());
-			} else if(event == inner21) {
-//				subPage.changeBody(subPage.getCompletionLecturePage());
-			} else if(event == inner22) {
-//				subPage.changeBody(subPage.getLectureMarksPage());
+			} else if(event == inner21) {	// 기이수성적조회
+				subPage.changeBody(subPage.getCompletionLectureMarks());
+			} else if(event == inner22) {	// 당학시 성적조회
+//				subPage.changeBody(subPage.getLectureMarks());
 			}
-			
+
 			repaint();
-			
 		}
 
 		@Override

@@ -94,9 +94,17 @@ public class MainPage extends JPanel {
 			}
 			else {
 				db = new DBController(DBconf.DB);
-				db.executeQuery("select name from student where id='" + ID + "' and pw='" + new String(PW, 0, PW.length)+"'");
+				db.executeQuery("select isAdmin from student where id='" + ID + "' and pw='" + new String(PW, 0, PW.length)+"'");
 				try {
 					if (db.getResultSet().next()) {
+						if(db.getResultSet().getString("isAdmin").equals("true")) {
+							master.setAdmin(true);
+							System.out.println("Admin logged in");
+						} else {
+							master.setAdmin(false);
+							System.out.println("Student logged in");
+						}
+						
 						master.pageDirection(master.getSubPage());
 //						JOptionPane.showMessageDialog(btnLogin, "로그인 성공!");
 					}

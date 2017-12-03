@@ -11,9 +11,9 @@ public class SetPeriodBox extends JFrame {
 	private JTextField			txtAccessStart[], txtAccessEnd[];	// 접속 가능 기간을 표시하는 텍스트 필드
 	private JButton				btnSet, btnExit;					// 설정 버튼 / 종료 버튼
 	private ButtonListener		buttonListener;						// 버튼이 클릭되었을 때, 화면을 전환하는 Listener
-	private SignUpAccessPage	primary;							// UpCall을 위한 상위 패널
+	private AccessPage	primary;							// UpCall을 위한 상위 패널
 	
-	public SetPeriodBox(SignUpAccessPage page, Date dtSignUpStart, Date dtSignUpEnd, Date dtAccessStart, Date dtAccessEnd) {
+	public SetPeriodBox(AccessPage page, Date dtSignUpStart, Date dtSignUpEnd, Date dtAccessStart, Date dtAccessEnd) {
 		super();
 		
 		this.primary = page;	// UpCall을 위해 상위 클래스 객체 저장
