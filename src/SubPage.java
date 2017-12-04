@@ -10,53 +10,84 @@ import javax.swing.JPanel;
 
 public class SubPage extends JPanel{
 
-	MasterFrame master;
-	JPanel top;
-	JPanel left;
-//	SearchLecture body;
-//	CompletionLectureMarks body;
-//	Applicationlecture body;
-//	InterestLecture body;
-	EducationMattersSchedule body;
-	LogoutListener listener;
-	
+	private MasterFrame master;
+	private JPanel top;
+	private JPanel left;
+	private JPanel body;
+
+	private LogoutListener listener;
+	private SignUpPage signUpPage;
+	private SignUpAccessPage signUpAccessPage;
+    private SearchLecture searchLecture;
+    private CompletionLectureMarks completionLectureMarks;
+    private Applicationlecture applicationlecture;
+    private InterestLecture interestLecture;
+
+	public SignUpPage getSignUpPage() {
+		return signUpPage;
+	}
+	public SignUpAccessPage getSignUpAccessPage() {
+		return signUpAccessPage;
+	}
+    public SearchLecture getSearchLecture() {
+        return searchLecture;
+    }
+    public CompletionLectureMarks getCompletionLectureMarks() {
+        return completionLectureMarks;
+    }
+    public Applicationlecture getApplicationlecture() {
+        return applicationlecture;
+    }
+    public InterestLecture getInterestLecture() {
+        return interestLecture;
+    }
+    
 	public SubPage(MasterFrame master) {
 		super();
 		this.master = master;
 		this.setPreferredSize(new Dimension(1280, 720));
 		this.setBackground(Color.white);
 		this.setLayout(null);
-		
+
 		this.listener = new LogoutListener();
-		
+		this.signUpPage = new SignUpPage(this);
+		this.signUpAccessPage = new SignUpAccessPage(this);
+
 		this.initLeft();
 		this.initTop();
 		this.initBody();
-		
+
 		this.add(top);
 		this.add(left);
 		this.add(body);
+
+	}
+
+	public void initLeft() {
+		this.left = new MenuPanel(this);
+		this.left.setBounds(0, 120, 250, 600);
+		this.left.setBackground(Color.white);
+
 	}
 	public void initTop() {
 		this.top = new JPanel();
 		this.top.setBounds(0, 0, 1280, 120);
-		this.top.setBackground(Color.pink);
-	}	
-	public void initLeft() {
-		this.left = new JPanel();
-		this.left.setBounds(0, 120, 250, 600);
-		this.left.setBackground(Color.cyan);
+		this.top.setBackground(Color.white);
 	}
 	public void initBody() {
-//		this.body = new SearchLecture();
-//		this.body = new CompletionLectureMarks();
-//		this.body = new Applicationlecture();
-//		this.body = new InterestLecture();
-		this.body = new EducationMattersSchedule();
+		this.body = new JPanel();
 		this.body.setBounds(250, 120, 1030, 600);
-		this.body.setBackground(Color.lightGray);
 	}
-	
+
+	public void changeBody(JPanel panel) {
+		this.remove(this.body);
+		this.body = panel;
+		this.body.setBounds(250, 120, 1030, 600);
+		this.add(this.body);
+		this.revalidate();
+		this.repaint();
+	}
+
 	private class LogoutListener implements ActionListener {
 		public void actionPerformed(ActionEvent event) {
 			int result;
@@ -73,5 +104,4 @@ public class SubPage extends JPanel{
 			}
 		}
 	}
-	
 }
