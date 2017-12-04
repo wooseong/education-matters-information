@@ -10,14 +10,12 @@ public class MasterFrame extends JFrame {
 	private SubPage subPage;
 	private boolean Admin;
 	
-	public boolean isAdmin() {
-		return Admin;
-	}
 	public void setAdmin(boolean admin) {
-		Admin = admin;
+		User.isAdmin = admin;
 		this.subPage.getMenuPanel().adminVisible(Admin);
 		this.subPage.getSignUpAccessPage().setButtonVisible(Admin);
 		this.subPage.getInterestLectureAccessPage().setButtonVisible(Admin);
+		this.subPage.getSubPageTop().setUserInfo();
 	}
 	
 	public MainPage getMainPage() {

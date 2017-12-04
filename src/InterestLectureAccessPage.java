@@ -22,7 +22,6 @@ public class InterestLectureAccessPage extends AccessPage {
 
 		bIfManager = true;	// 관리자 계정인지 아닌지 판단해서 값 설정 (현재 default를 관리자로 설정)
 
-		this.setBounds(300, 150, 980, 570);
 		this.setBackground(new Color(0xABCDEF));
 		this.setLayout(null);
 

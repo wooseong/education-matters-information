@@ -51,7 +51,6 @@ public class MainPage extends JPanel {
 		jtfID = new JTextField(10);
 		jtfID.setFont(inputFnt);
 		jtfID.setBounds(pt.x + 100, pt.y, 180, 30);
-
 		this.add(jtfID);
 		
 		lblPW = new JLabel("비밀번호");
@@ -94,9 +93,17 @@ public class MainPage extends JPanel {
 			}
 			else {
 				db = new DBController(DBconf.DB);
-				db.executeQuery("select isAdmin from student where id='" + ID + "' and pw='" + new String(PW, 0, PW.length)+"'");
+				db.executeQuery("select id, name, birth, college, enter, grade, major, isAdmin from student where id='" + ID + "' and pw='" + new String(PW, 0, PW.length)+"'");
 				try {
 					if (db.getResultSet().next()) {
+						User.LOGINID = db.getResultSet().getString("id");
+						User.USERNAME = db.getResultSet().getString("name");
+						User.BIRTH = db.getResultSet().getString("birth");
+						User.COLLEGE = db.getResultSet().getString("college");
+						User.ENTER = db.getResultSet().getString("enter");
+						User.GRADE = db.getResultSet().getString("grade");
+						User.MAJOR = db.getResultSet().getString("major");
+						
 						if(db.getResultSet().getString("isAdmin").equals("true")) {
 							master.setAdmin(true);
 							System.out.println("Admin logged in");
@@ -106,6 +113,8 @@ public class MainPage extends JPanel {
 						}
 						
 						master.pageDirection(master.getSubPage());
+						jtfID.setText("");
+						jtfPW.setText("");
 //						JOptionPane.showMessageDialog(btnLogin, "로그인 성공!");
 					}
 					else {

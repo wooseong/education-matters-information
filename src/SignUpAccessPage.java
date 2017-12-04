@@ -21,8 +21,6 @@ public class SignUpAccessPage extends AccessPage {
 		this.thisPage = this;	// 자기 자신 저장
 
 		bIfManager = true;	// 관리자 계정인지 아닌지 판단해서 값 설정 (현재 default를 관리자로 설정)
-
-		this.setBounds(300, 150, 980, 570);
 		this.setBackground(new Color(0xABCDEF));
 		this.setLayout(null);
 
