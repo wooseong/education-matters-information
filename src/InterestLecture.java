@@ -303,7 +303,7 @@ public class InterestLecture extends JPanel{
 			
 			DBController db = new DBController(DBconf.DB);
 			
-			System.out.println(query);
+//			System.out.println(query);
 			
 			db.executeQuery(query);
 			String[][] str=null;
