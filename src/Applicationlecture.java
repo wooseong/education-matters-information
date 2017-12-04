@@ -363,15 +363,14 @@ public class Applicationlecture extends JPanel{
 			for(String[] temp:applyLectures) {
 				try {
 					System.out.println("1" + temp[2] + temp[3] + stryear_semester.substring(0, 6) + "4");
-					
 					DBController.ClassEnroll("1", temp[2], temp[3], stryear_semester.substring(0, 6), "4");
-					System.out.println(2);
-//					DBController.ClassEnroll("1", temp[2], temp[3], stryear_semester.substring(0, 6), "4");
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-	
+				String select = "number, class, name, classify, grade, credit, credit_theory, credit_practice, maxStudent, lectureTime, lecture_room, prof, language";
+				String query = "select " + select + " from lecture where number in (select lecture from '" + stryear_semester.substring(0, 6) + "' where id='1') and class in (select class from '" + stryear_semester.substring(0, 6) + "' where id='1')";
+				mytable.makeTable(query);
 			}			
 		}
 	}
