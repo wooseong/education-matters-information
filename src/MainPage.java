@@ -18,7 +18,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 public class MainPage extends JPanel {
-    private Image img, resizeImage;
+    private Image img;
     private JButton btnLogin;
     private JTextField jtfID;
 	private JPasswordField jtfPW;

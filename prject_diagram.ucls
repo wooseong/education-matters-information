@@ -1,0 +1,811 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.2" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="AdminPage.ButtonListener" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/AdminPage.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="106" width="223" x="1715" y="2212"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="SelfCreateTable" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/SelfCreateTable.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="376" width="292" x="1383" y="2212"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="SetPeriodBox.ButtonListener" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/SetPeriodBox.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="106" width="223" x="3034" y="2628"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="SearchLecture" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/SearchLecture.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="304" width="217" x="580" y="1616"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="Applicationlecture.applyLectureListener" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/Applicationlecture.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="106" width="223" x="1978" y="2212"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="Applicationlecture.searchActionListener" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/Applicationlecture.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="106" width="223" x="2241" y="2212"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="CurrentTimeLabel" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/CurrentTimeLabel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="214" width="153" x="3649" y="2212"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="InterestLecture" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/InterestLecture.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="556" width="231" x="1120" y="1616"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="Applicationlecture" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/Applicationlecture.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="556" width="231" x="2241" y="1616"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="InterestLecture.applyLectureListener" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/InterestLecture.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="106" width="223" x="327" y="2212"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="SignUpAccessPage" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/SignUpAccessPage.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="160" width="203" x="3074" y="1616"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="InterestLectureAccessPage.ButtonListener" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/InterestLectureAccessPage.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="106" width="223" x="3842" y="2212"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="SubPageTop" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/SubPageTop.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="178" width="184" x="1599" y="170"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="MainPage" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/MainPage.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="268" width="206" x="317" y="1020"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="CsvReader" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/CsvReader.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="111" y="444"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="XlsReader" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/XlsReader.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="307" y="442"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="AdminPage" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/AdminPage.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="196" width="190" x="1715" y="1616"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="MasterFrame" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/MasterFrame.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="165" y="139"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="MenuPanel" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/MenuPanel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="376" width="201" x="53" y="604"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="InterestLectureAccessPage" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/InterestLectureAccessPage.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="160" width="247" x="3327" y="1616"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="MainPage.LoginListener" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/MainPage.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="106" width="223" x="317" y="1616"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="MenuPanel.MenuListener" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/MenuPanel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="178" width="224" x="53" y="1020"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="SelfCreateTable.tableListener" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/SelfCreateTable.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="178" width="224" x="1383" y="2628"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="SubPageTop.LogoutListener" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/SubPageTop.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="178" width="224" x="1599" y="604"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="User" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/User.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="508" y="461"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="Applicationlecture.allLectureCheckBoxListener" 
+    project="UniversityInformationSystem" file="/UniversityInformationSystem/src/Applicationlecture.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="106" width="227" x="2504" y="2212"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" name="AccessPage" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/AccessPage.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="556" width="245" x="3074" y="1020"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="28" language="java" name="DBController" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/DBController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="304" width="304" x="24" y="2628"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="29" language="java" name="InterestLecture.whatSearchActionListener" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/InterestLecture.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="106" width="223" x="590" y="2212"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="30" language="java" name="SubPage" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/SubPage.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="322" width="376" x="1715" y="1020"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="31" language="java" name="InterestLecture.allLectureCheckBoxListener" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/InterestLecture.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="106" width="227" x="853" y="2212"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="32" language="java" name="CompletionLectureMarks" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/CompletionLectureMarks.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="340" width="243" x="837" y="1616"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="33" language="java" name="Applicationlecture.whatSearchActionListener" 
+    project="UniversityInformationSystem" file="/UniversityInformationSystem/src/Applicationlecture.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="106" width="223" x="2771" y="2212"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="34" language="java" name="EducationMattersSchedule" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/EducationMattersSchedule.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="752" y="400"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="35" language="java" name="SearchLecture.searchActionListener" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/SearchLecture.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="106" width="223" x="64" y="2212"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="36" language="java" name="SignUpAccessPage.ButtonListener" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/SignUpAccessPage.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="106" width="223" x="3386" y="2212"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="37" language="java" name="InterestLecture.searchActionListener" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/InterestLecture.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="106" width="223" x="1120" y="2212"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="38" language="java" name="XlsxReader" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/XlsxReader.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="214" width="181" x="1033" y="170"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="39" language="java" name="DBconf" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/DBconf.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="250" width="305" x="1254" y="170"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="40" language="java" name="SetPeriodBox" project="UniversityInformationSystem" 
+    file="/UniversityInformationSystem/src/SetPeriodBox.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="268" width="312" x="3034" y="2212"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="41">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="42" name="checkBoxAction"/>      
+      <multiplicity id="43" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="31" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="44">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="37"/>  
+  </nesting>  
+  <association id="45">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="46" name="buttonListener"/>      
+      <multiplicity id="47" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="48">    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="49" name="subPage"/>      
+      <multiplicity id="50" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="30" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="51">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="52" name="logoutListener"/>      
+      <multiplicity id="53" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="54">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="55" name="primary"/>      
+      <multiplicity id="56" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="30" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="57">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="36"/>  
+  </nesting>  
+  <association id="58">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="59" name="whatSearchAction"/>      
+      <multiplicity id="60" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="29" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="61">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="62" name="table"/>      
+      <multiplicity id="63" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="64">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="5"/>  
+  </nesting>  
+  <association id="65">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="66" name="mytable"/>      
+      <multiplicity id="67" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="68">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="12"/>  
+  </nesting>  
+  <association id="69">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="70" name="lblCurrentTime"/>      
+      <multiplicity id="71" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="72">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="23"/>  
+  </nesting>  
+  <association id="73">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="74" name="completionLectureMarks"/>      
+      <multiplicity id="75" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="32" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="76">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="77" name="searchLecture"/>      
+      <multiplicity id="78" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="79">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="80" name="listener"/>      
+      <multiplicity id="81" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="82">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="83" name="setPeriodBox"/>      
+      <multiplicity id="84" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="40" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="85">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="86" name="thisPage"/>      
+      <multiplicity id="87" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="88">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="89" name="lecturetable"/>      
+      <multiplicity id="90" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="91">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="92" name="applyLectureAction"/>      
+      <multiplicity id="93" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="94">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="95" name="searchAction"/>      
+      <multiplicity id="96" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="97">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="98" name="searchAction"/>      
+      <multiplicity id="99" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="35" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="100">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="101" name="table"/>      
+      <multiplicity id="102" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="103">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="104" name="buttonListener"/>      
+      <multiplicity id="105" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="106">    
+    <bendpoint x="3043" y="1616"/>    
+    <end type="SOURCE" refId="40" navigable="false">      
+      <attribute id="107" name="primary"/>      
+      <multiplicity id="108" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="27" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="109">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="110" name="mainPage"/>      
+      <multiplicity id="111" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="112">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="113" name="db"/>      
+      <multiplicity id="114" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="115">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="35"/>  
+  </nesting>  
+  <association id="116">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="117" name="applicationlecture"/>      
+      <multiplicity id="118" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="119">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="120" name="searchAction"/>      
+      <multiplicity id="121" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="37" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="122">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="21"/>  
+  </nesting>  
+  <association id="123">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="124" name="listener"/>      
+      <multiplicity id="125" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="126">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="33"/>  
+  </nesting>  
+  <nesting id="127">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="26"/>  
+  </nesting>  
+  <generalization id="128">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="27"/>  
+  </generalization>  
+  <association id="129">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="130" name="adminPage"/>      
+      <multiplicity id="131" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="132">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="133" name="signUpAccessPage"/>      
+      <multiplicity id="134" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="135">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="31"/>  
+  </nesting>  
+  <association id="136">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="137" name="mytable"/>      
+      <multiplicity id="138" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="139">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="6"/>  
+  </nesting>  
+  <association id="140">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="141" name="subPage"/>      
+      <multiplicity id="142" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="30" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="143">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="144" name="master"/>      
+      <multiplicity id="145" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="146">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="147" name="whatSearchAction"/>      
+      <multiplicity id="148" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="33" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="149">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="150" name="interestLectureAccessPage"/>      
+      <multiplicity id="151" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="152">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="10"/>  
+  </nesting>  
+  <association id="153">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="154" name="checkBoxAction"/>      
+      <multiplicity id="155" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="26" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="156">    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="157" name="menuListener"/>      
+      <multiplicity id="158" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="159">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="160" name="interestLecture"/>      
+      <multiplicity id="161" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="162">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="163" name="applyLectureAction"/>      
+      <multiplicity id="164" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="165">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="166" name="setPeriodBox"/>      
+      <multiplicity id="167" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="40" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="168">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="169" name="lecturetable"/>      
+      <multiplicity id="170" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="171">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="1"/>  
+  </nesting>  
+  <generalization id="172">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="27"/>  
+  </generalization>  
+  <association id="173">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="174" name="master"/>      
+      <multiplicity id="175" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="176">    
+    <end type="SOURCE" refId="40"/>    
+    <end type="TARGET" refId="3"/>  
+  </nesting>  
+  <nesting id="177">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="29"/>  
+  </nesting>  
+  <association id="178">    
+    <end type="SOURCE" refId="40" navigable="false">      
+      <attribute id="179" name="buttonListener"/>      
+      <multiplicity id="180" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="181">    
+    <bendpoint x="33" y="1616"/>    
+    <bendpoint x="33" y="2212"/>    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="182" name="db"/>      
+      <multiplicity id="183" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="184">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="24"/>  
+  </nesting>  
+  <association id="185">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="186" name="lblCurrentTime"/>      
+      <multiplicity id="187" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="188">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="189" name="thisPage"/>      
+      <multiplicity id="190" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="191">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="192" name="primary"/>      
+      <multiplicity id="193" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="30" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="194">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="22"/>  
+  </nesting>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

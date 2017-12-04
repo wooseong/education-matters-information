@@ -13,6 +13,8 @@ public class SubPageTop extends JPanel {
 	private ImageIcon logoImage;
 	private JLabel userInfo;
 	private JLabel logout;
+	private JLabel guidance;
+	private JLabel systemGuide;
 	
 	private MasterFrame master;
 	
@@ -34,12 +36,26 @@ public class SubPageTop extends JPanel {
 		this.add(logo);
 		
 		this.userInfo = new JLabel("");
-		this.userInfo.setFont(new Font("나눔고딕", Font.PLAIN, 20));
-		this.userInfo.setBounds(900, 10, 300, 20);
+		this.userInfo.setFont(new Font("나눔고딕", Font.PLAIN, 15));
+		this.userInfo.setBounds(250, 20, 200, 20);
 		this.add(userInfo);
 		
-		this.logout = new JLabel("로그아웃");
-		this.logout.setBounds(1040, 40, 300, 20);
+		this.systemGuide = new JLabel("[학부생 학사정보시스템]");
+		this.systemGuide.setFont(new Font("나눔고딕", Font.BOLD, 15));
+		this.systemGuide.setForeground(new Color(0x921229));
+		this.systemGuide.setBounds(250, 45, 200, 20);
+		this.add(systemGuide);
+		
+		this.guidance = new JLabel("학사정보시스템의 오류는 lisa960310@naver.com로 보내주시기 바랍니다.");
+		this.guidance.setFont(new Font("나눔고딕", Font.PLAIN, 15));
+		this.guidance.setForeground(Color.lightGray);
+		this.guidance.setBounds(700, 20, 600, 20);
+		this.add(guidance);
+		
+		this.logout = new JLabel("Logout");
+		this.logout.setFont(new Font("나눔고딕", Font.BOLD, 15));
+		this.logout.setForeground(Color.gray);
+		this.logout.setBounds(1200, 20, 60, 20);
 		this.logout.addMouseListener(logoutListener);
 		this.add(logout);
 	}
