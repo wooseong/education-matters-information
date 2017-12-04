@@ -34,7 +34,7 @@ public class CompletionLectureMarks extends JPanel {
 		init();
 		setPreferredSize(new Dimension(1030, 570));
 
-		setBackground(new Color(0xDDDDDD));
+		setBackground(new Color(0xEEDDDD));
 		setLayout(null);
 
 		informationPanel = new JPanel();

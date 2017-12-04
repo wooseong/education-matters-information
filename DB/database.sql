@@ -10,7 +10,8 @@ create table 'student' (
     'college'       varchar(15) null,   --대학
     'major'         varchar(15) null,   --전공
     'grade'         varchar(15) null,   --학년
-    'status'        varchar(15) null    --휴복학 상태
+    'status'        varchar(15) null,    --휴복학 상태
+    'isAdmin'       varchar(6) 'false'
 );
 
 CREATE TABLE 'lecture' (
@@ -65,7 +66,8 @@ insert into 'student' values (
     '전자정보공학대학',
     '정보보호학과',
     '3',
-    '0'
+    '0',
+    'false'
 );
 
 insert into 'student' values (
@@ -77,7 +79,21 @@ insert into 'student' values (
     '전자정보공학대학',
     '컴퓨터공학과',
     '1',
-    '0'
+    '0',
+    'false'
+);
+
+insert into 'student' values (
+    'admin',
+    'admin',
+    'admin',
+    '0000.00.00',
+    '0000.00.00',
+    '관리자',
+    '관리자',
+    '0',
+    '0',
+    'true'
 );
 
 insert into 'lecture' values (

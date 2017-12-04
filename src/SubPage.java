@@ -16,16 +16,14 @@ public class SubPage extends JPanel{
 	private JPanel body;
 
 	private LogoutListener listener;
-	private SignUpPage signUpPage;
 	private SignUpAccessPage signUpAccessPage;
     private SearchLecture searchLecture;
     private CompletionLectureMarks completionLectureMarks;
     private Applicationlecture applicationlecture;
     private InterestLecture interestLecture;
+    private InterestLectureAccessPage interestLectureAccessPage;
+	private AdminPage adminPage;
 
-	public SignUpPage getSignUpPage() {
-		return signUpPage;
-	}
 	public SignUpAccessPage getSignUpAccessPage() {
 		return signUpAccessPage;
 	}
@@ -41,6 +39,15 @@ public class SubPage extends JPanel{
     public InterestLecture getInterestLecture() {
         return interestLecture;
     }
+    public InterestLectureAccessPage getInterestLectureAccessPage() {
+        return interestLectureAccessPage;
+    }
+    public AdminPage getAdminPage() {
+        return adminPage;
+    }
+    public MenuPanel getMenuPanel() {
+    	return (MenuPanel) this.left;
+    }
     
 	public SubPage(MasterFrame master) {
 		super();
@@ -49,34 +56,30 @@ public class SubPage extends JPanel{
 		this.setBackground(Color.white);
 		this.setLayout(null);
 
-		this.listener = new LogoutListener();
-		this.signUpPage = new SignUpPage(this);
-		this.signUpAccessPage = new SignUpAccessPage(this);
+		listener = new LogoutListener();
+		signUpAccessPage = new SignUpAccessPage(this);
+	    searchLecture = new SearchLecture();
+	    completionLectureMarks = new CompletionLectureMarks();
+	    applicationlecture = new Applicationlecture();
+	    interestLecture = new InterestLecture();
+	    interestLectureAccessPage = new InterestLectureAccessPage(this);
+		adminPage = new AdminPage();
 
-		this.initLeft();
-		this.initTop();
-		this.initBody();
+		this.left = new MenuPanel(this, master.isAdmin());
+		this.left.setBounds(0, 120, 250, 600);
+		this.left.setBackground(Color.white);
+		
+		this.top = new JPanel();
+		this.top.setBounds(0, 0, 1280, 120);
+		this.top.setBackground(Color.white);
+		
+		this.body = new JPanel();
+		this.body.setBounds(250, 120, 1030, 600);
 
 		this.add(top);
 		this.add(left);
 		this.add(body);
 
-	}
-
-	public void initLeft() {
-		this.left = new MenuPanel(this);
-		this.left.setBounds(0, 120, 250, 600);
-		this.left.setBackground(Color.white);
-
-	}
-	public void initTop() {
-		this.top = new JPanel();
-		this.top.setBounds(0, 0, 1280, 120);
-		this.top.setBackground(Color.white);
-	}
-	public void initBody() {
-		this.body = new JPanel();
-		this.body.setBounds(250, 120, 1030, 600);
 	}
 
 	public void changeBody(JPanel panel) {

@@ -6,21 +6,26 @@ import javax.swing.JPanel;
 
 public class MasterFrame extends JFrame {
 	
-	MainPage mainPage;
-	SubPage subPage;
-	String studentID;
-
-
+	private MainPage mainPage;
+	private SubPage subPage;
+	private boolean Admin;
+	
+	public boolean isAdmin() {
+		return Admin;
+	}
+	public void setAdmin(boolean admin) {
+		Admin = admin;
+		this.subPage.getMenuPanel().adminVisible(Admin);
+		this.subPage.getSignUpAccessPage().setButtonVisible(Admin);
+		this.subPage.getInterestLectureAccessPage().setButtonVisible(Admin);
+	}
+	
 	public MainPage getMainPage() {
 		return mainPage;
 	}
 	public SubPage getSubPage() {
 		return subPage;
 	}
-	public void setStudentID(String str) {
-		this.studentID = str;
-	}
-
 	
 	public MasterFrame() throws HeadlessException {
 		super();

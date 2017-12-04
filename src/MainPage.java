@@ -18,10 +18,9 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 public class MainPage extends JPanel {
-
     private Image img, resizeImage;
     private JButton btnLogin;
-	private JTextField jtfID;
+    private JTextField jtfID;
 	private JPasswordField jtfPW;
 	private JLabel	lblID, lblPW;
 	private DBController db;
@@ -59,8 +58,8 @@ public class MainPage extends JPanel {
 		lblPW.setFont(baseFnt);
 		lblPW.setBounds(pt.x-20, pt.y + 30, 100, 30);
 		this.add(lblPW);
-		
-		jtfPW = new JPasswordField();
+
+        jtfPW = new JPasswordField();
 		jtfPW.setEchoChar('*');
 		jtfPW.setFont(inputFnt);
 		jtfPW.setBounds(pt.x + 100, pt.y + 30, 180, 30);
@@ -72,7 +71,6 @@ public class MainPage extends JPanel {
 		btnLogin.setFont(new Font("나눔고딕", Font.BOLD, 20));
 		btnLogin.setForeground(Color.white);
 		btnLogin.setBounds(pt.x + 290, pt.y, 100, 60);
-
 		btnLogin.addActionListener(listener);
 		this.add(btnLogin);
 		
@@ -96,9 +94,17 @@ public class MainPage extends JPanel {
 			}
 			else {
 				db = new DBController(DBconf.DB);
-				db.executeQuery("select name from student where id='" + ID + "' and pw='" + new String(PW, 0, PW.length)+"'");
+				db.executeQuery("select isAdmin from student where id='" + ID + "' and pw='" + new String(PW, 0, PW.length)+"'");
 				try {
 					if (db.getResultSet().next()) {
+						if(db.getResultSet().getString("isAdmin").equals("true")) {
+							master.setAdmin(true);
+							System.out.println("Admin logged in");
+						} else {
+							master.setAdmin(false);
+							System.out.println("Student logged in");
+						}
+						
 						master.pageDirection(master.getSubPage());
 //						JOptionPane.showMessageDialog(btnLogin, "로그인 성공!");
 					}
