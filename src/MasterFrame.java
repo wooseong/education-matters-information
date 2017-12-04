@@ -6,9 +6,18 @@ import javax.swing.JPanel;
 
 public class MasterFrame extends JFrame {
 	
-	MainPage mainPage;
-	SubPage subPage;
-
+	private MainPage mainPage;
+	private SubPage subPage;
+	private boolean Admin;
+	
+	public void setAdmin(boolean admin) {
+		User.isAdmin = admin;
+		this.subPage.getMenuPanel().adminVisible(Admin);
+		this.subPage.getSignUpAccessPage().setButtonVisible(Admin);
+		this.subPage.getInterestLectureAccessPage().setButtonVisible(Admin);
+		this.subPage.getSubPageTop().setUserInfo();
+	}
+	
 	public MainPage getMainPage() {
 		return mainPage;
 	}
@@ -47,6 +56,4 @@ public class MasterFrame extends JFrame {
 		this.revalidate();
 		this.repaint();
 	}
-	
-	
 }
