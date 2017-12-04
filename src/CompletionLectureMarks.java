@@ -39,7 +39,7 @@ public class CompletionLectureMarks extends JPanel {
 
 		informationPanel = new JPanel();
 		informationPanel.setBounds(5, 5, 1020, 100);
-		informationPanel.setBackground(new Color(0xDDDDDD));
+		informationPanel.setBackground(new Color(0xEEEEEE));
 		informationPanel.setLayout(null);
 		informationPanel.setBorder(BorderFactory.createTitledBorder(new LineBorder(Color.lightGray), "학생 기초 정보"));
 		add(informationPanel);

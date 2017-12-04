@@ -16,7 +16,8 @@ public class SubPage extends JPanel{
 //	SearchLecture body;
 //	CompletionLectureMarks body;
 //	Applicationlecture body;
-	InterestLecture body;
+//	InterestLecture body;
+	EducationMattersSchedule body;
 	LogoutListener listener;
 	
 	public SubPage(MasterFrame master) {
@@ -50,7 +51,8 @@ public class SubPage extends JPanel{
 //		this.body = new SearchLecture();
 //		this.body = new CompletionLectureMarks();
 //		this.body = new Applicationlecture();
-		this.body = new InterestLecture();
+//		this.body = new InterestLecture();
+		this.body = new EducationMattersSchedule();
 		this.body.setBounds(250, 120, 1030, 600);
 		this.body.setBackground(Color.lightGray);
 	}
