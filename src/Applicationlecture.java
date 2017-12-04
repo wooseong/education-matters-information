@@ -362,8 +362,9 @@ public class Applicationlecture extends JPanel{
 			String 	stryear_semester	= (String) yearTextField.getText(); // 학기/년도
 			for(String[] temp:applyLectures) {
 				try {
-					System.out.println(1);
-					System.out.println(DBController.ClassEnroll("1", temp[2], temp[3], stryear_semester.substring(0, 6), "4"));
+					System.out.println("1" + temp[2] + temp[3] + stryear_semester.substring(0, 6) + "4");
+					
+					DBController.ClassEnroll("1", temp[2], temp[3], stryear_semester.substring(0, 6), "4");
 					System.out.println(2);
 //					DBController.ClassEnroll("1", temp[2], temp[3], stryear_semester.substring(0, 6), "4");
 				} catch (SQLException e1) {

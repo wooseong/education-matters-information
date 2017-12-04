@@ -114,6 +114,8 @@ public class MainPage extends JPanel {
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
+				} finally {
+					db.disconnectDB();
 				}
 			}
 		}
