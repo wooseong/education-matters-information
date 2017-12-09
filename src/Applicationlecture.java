@@ -9,13 +9,17 @@ import java.sql.SQLException;
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 
-public class Applicationlecture extends JPanel{
+public class Applicationlecture extends JPanel{//수강신청 페이지
 
 	private JPanel						comboBoxPanel, applyJPanel, cancelJPanel;
-	private JLabel 						yearLabel, departmentLabel, searchLabel, lectureNameLabel, classNumberLabel,
-										lectureNumberLabel, professorNameLabel, classifyLabel, leftCreditLabel, leftCreditNumberLabel;
+	private JLabel 						yearLabel, departmentLabel, searchLabel, 
+										lectureNameLabel, classNumberLabel,
+										lectureNumberLabel, professorNameLabel,
+										classifyLabel, leftCreditLabel,
+										leftCreditNumberLabel;
 	private JComboBox 					whatSearchCombo, classifyCombo;
-	private JTextField					yearTextField, departmentTextField, lectureNameTextField, classNumberTextField,
+	private JTextField					yearTextField, departmentTextField,
+										lectureNameTextField, classNumberTextField,
 										lectureNumberTextField, professorNameTextField;
 	private JButton 					searchButton, applyAllLectureButton;
 	private searchActionListener 		searchAction;
@@ -26,6 +30,7 @@ public class Applicationlecture extends JPanel{
 	private allLectureCheckBoxListener  checkBoxAction;
 	private int 						comboBoxIndex;
 	private String 						query;
+	
 	public Applicationlecture() {
 		setPreferredSize(new Dimension(1030, 570));
 

@@ -71,7 +71,7 @@ public class SubPageTop extends JPanel {
 			// TODO Auto-generated method stub
 			int result;
 
-			result = JOptionPane.showConfirmDialog(master, "로그아웃 하시겠습니까?");
+			result = JOptionPane.showConfirmDialog(master, "로그아웃 하시겠습니까?", "",JOptionPane.YES_NO_OPTION);
 
 			if (result == JOptionPane.YES_OPTION) {
 				master.pageDirection(master.getMainPage());
