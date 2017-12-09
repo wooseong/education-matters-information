@@ -87,41 +87,26 @@ public class MenuPanel extends JPanel {
 		this.inner11 = new JLabel("강좌조회");
 		this.inner11.setBounds(this.base1Pt.x, this.base1Pt.y + height, width, height-1);
 		this.inner11.setHorizontalAlignment(SwingConstants.CENTER);
-//		this.inner11.setOpaque(true);
-//		this.inner11.setBackground(new Color(0x465680));
-//		this.inner11.setForeground(Color.white);
 		this.inner11.addMouseListener(menuListener);
 		
 		this.inner12 = new JLabel("관심과목설정");
 		this.inner12.setBounds(this.base1Pt.x, this.base1Pt.y + height*2, width, height-1);
 		this.inner12.setHorizontalAlignment(SwingConstants.CENTER);
-//		this.inner12.setOpaque(true);
-//		this.inner12.setBackground(new Color(0x465680));
-//		this.inner12.setForeground(Color.white);
 		this.inner12.addMouseListener(menuListener);
 		
 		this.inner13 = new JLabel("수강신청");
 		this.inner13.setBounds(this.base1Pt.x, this.base1Pt.y + height*3, width, height-1);
 		this.inner13.setHorizontalAlignment(SwingConstants.CENTER);
-//		this.inner13.setOpaque(true);
-//		this.inner13.setBackground(new Color(0x465680));
-//		this.inner13.setForeground(Color.white);
 		this.inner13.addMouseListener(menuListener);
 		
 		this.inner21 = new JLabel("기이수성적조회");
 		this.inner21.setBounds(this.base2Pt.x, this.base2Pt.y + height, width, height-1);
 		this.inner21.setHorizontalAlignment(SwingConstants.CENTER);
-//		this.inner21.setOpaque(true);
-//		this.inner21.setBackground(new Color(0x465680));
-//		this.inner21.setForeground(Color.white);
 		this.inner21.addMouseListener(menuListener);
 		
 		this.inner22 = new JLabel("당학기성적조회");
 		this.inner22.setBounds(this.base2Pt.x, this.base2Pt.y + height*2, width, height-1);
 		this.inner22.setHorizontalAlignment(SwingConstants.CENTER);
-//		this.inner22.setOpaque(true);
-//		this.inner22.setBackground(new Color(0x465680));
-//		this.inner22.setForeground(Color.white);
 		this.inner22.addMouseListener(menuListener);
 	}
 	
@@ -179,8 +164,8 @@ public class MenuPanel extends JPanel {
 				subPage.getSignUpAccessPage().setButtonVisible();
 				subPage.changeBody(subPage.getSignUpAccessPage());
 			} else if(event == inner21) {	// 기이수성적조회
-				subPage.getCompletionLectureMarks().init();
-				subPage.changeBody(subPage.getCompletionLectureMarks());
+//				subPage.getCompletionLectureMarks().init();
+//				subPage.changeBody(subPage.getCompletionLectureMarks());
 			} else if(event == inner22) {	// 당학시 성적조회
 //				subPage.changeBody(subPage.getLectureMarks());
 			}
@@ -189,28 +174,16 @@ public class MenuPanel extends JPanel {
 		}
 
 		@Override
-		public void mousePressed(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
+		public void mousePressed(MouseEvent e) {}
 
 		@Override
-		public void mouseReleased(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
+		public void mouseReleased(MouseEvent e) {}
 
 		@Override
-		public void mouseEntered(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
+		public void mouseEntered(MouseEvent e) {}
 
 		@Override
-		public void mouseExited(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
+		public void mouseExited(MouseEvent e) {}
 		
 	}
 }
