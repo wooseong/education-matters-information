@@ -173,12 +173,14 @@ public class MenuPanel extends JPanel {
 			} else if(event == inner11) {	// 수업목록
 //				subPage.changeBody(subPage.getLecturePage());
 			} else if(event == inner12) {	// 관심과목
+				subPage.getInterestLectureAccessPage().setButtonVisible();
 				subPage.changeBody(subPage.getInterestLectureAccessPage());
 			} else if(event == inner13) {	// 수강신청
+				subPage.getSignUpAccessPage().setButtonVisible();
 				subPage.changeBody(subPage.getSignUpAccessPage());
 			} else if(event == inner21) {	// 기이수성적조회
-				subPage.changeBody(subPage.getCompletionLectureMarks());
 				subPage.getCompletionLectureMarks().init();
+				subPage.changeBody(subPage.getCompletionLectureMarks());
 			} else if(event == inner22) {	// 당학시 성적조회
 //				subPage.changeBody(subPage.getLectureMarks());
 			}
