@@ -173,6 +173,12 @@ public class DBController {
         }
     }
 
+    /**
+     * ResultSet 의 결과를 이차원 문자 배열로 바꿔주는 메소드
+     * @param rs
+     * @return String[][]
+     * @throws SQLException
+     */
     public static String[][] toStringList(ResultSet rs) throws SQLException{
         ArrayList<ArrayList<String>> list = new ArrayList<ArrayList<String>>();
         ArrayList<String> temp = new ArrayList<String>();
