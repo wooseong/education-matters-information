@@ -21,7 +21,7 @@ public class AccessPage extends JPanel {
 	private ButtonListener		buttonListener;				// 버튼이 클릭되었을 때, 화면을 전환하는 Listener
 	protected SimpleDateFormat	dayTime;					// 화면에 날짜를 표시하기 위한 Format
 	
-	private	SubPage				primary;					// Upcall 을 위한 상위 페이지 저장
+	private	SubPage				primary;					//	 Upcall 을 위한 상위 페이지 저장
 	protected AccessPage		thisPage;					// ButtonListener 에서 this 를 넘겨주기 위함
 	private SetPeriodBox		setPeriodBox;				// 기간 설정 창
 	

@@ -8,12 +8,12 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-public class SubPageTop extends JPanel {
-	private JLabel logo;
-	private ImageIcon logoImage;
-	private JLabel userInfo;
-	private JLabel logout;
-    private JLabel guidance;
+public class SubPageTop extends JPanel { // 학사정보시스템 페이지 상단바
+	private JLabel logo; //세종대 로고를 받을 라벨
+	private ImageIcon logoImage; //로고를 담을 이미지 아이콘
+	private JLabel userInfo; // 사용자 이름을 띄울 라벨
+	private JLabel logout; // "로그아웃" 라벨
+    private JLabel guidance; // 가이드 글 
     private JLabel systemGuide;
 
 	private MasterFrame master;
@@ -71,10 +71,9 @@ public class SubPageTop extends JPanel {
 			// TODO Auto-generated method stub
 			int result;
 
-			result = JOptionPane.showConfirmDialog(master, "로그아웃 하시겠습니까?", "",JOptionPane.YES_NO_OPTION);
+			result = JOptionPane.showConfirmDialog(master, "로그아웃 하시겠습니까?", "",JOptionPane.YES_NO_OPTION);// 팝업창 생성, "예 / 아니오" 2가지 버튼으로만 생성
 
-			if (result == JOptionPane.YES_OPTION) {
-				master.pageDirection(master.getMainPage());
+			if (result == JOptionPane.YES_OPTION) {// "예"가 눌린경우
 				master.pageDirection(master.getMainPage());
 				master.getSubPage().changeBody(new JPanel());
 			} else if (result == JOptionPane.NO_OPTION) {
@@ -83,21 +82,24 @@ public class SubPageTop extends JPanel {
 				/* DO SOMETHING */
 			}
 		}
-
 		@Override
-		public void mousePressed(MouseEvent e) {}
-
-		@Override
-		public void mouseReleased(MouseEvent e) {}
-
-		@Override
-		public void mouseEntered(MouseEvent e) {
-			logout.setForeground(Color.BLUE);
+		public void mouseEntered(MouseEvent e) {// 마우스가 지정 범위 안에 들어갔을 때
+			logout.setForeground(Color.BLUE);// logout라벨 글씨색 파랑으로 변경
 		}
 
 		@Override
-		public void mouseExited(MouseEvent e) {
-			logout.setForeground(Color.BLACK);
+		public void mouseExited(MouseEvent e) {// 마우스가 지정 범위 안에서 나왔을 때
+			logout.setForeground(Color.BLACK);//logout라벨 글씨색 검정으로 변경
+		}
+		@Override	
+		public void mousePressed(MouseEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		}
+		@Override
+		public void mouseReleased(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
 		}
 		
 	}
