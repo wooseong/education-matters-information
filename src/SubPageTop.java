@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -41,6 +42,7 @@ public class SubPageTop extends JPanel {
 		this.logout = new JLabel("로그아웃");
 		this.logout.setBounds(1040, 40, 300, 20);
 		this.logout.addMouseListener(logoutListener);
+		this.logout.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		this.add(logout);
 	}
 	
@@ -58,6 +60,7 @@ public class SubPageTop extends JPanel {
 			result = JOptionPane.showConfirmDialog(master, "로그아웃 하시겠습니까?");
 
 			if (result == JOptionPane.YES_OPTION) {
+				logout.setForeground(Color.BLACK);
 				master.pageDirection(master.getMainPage());
 				master.pageDirection(master.getMainPage());
 				master.getSubPage().changeBody(new JPanel());
