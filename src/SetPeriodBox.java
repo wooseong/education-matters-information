@@ -25,6 +25,7 @@ public class SetPeriodBox extends JFrame {
 
 		this.setBounds(400, 200, 480, 220);	
 		this.setPreferredSize(new Dimension(480, 220));
+		this.setTitle("관심 과목 담기 기간 설정");
 		
 		this.nBoxType = this.INTEREST_LECTURE;
 		this.initData(dtAccessStart, dtAccessEnd);
@@ -39,6 +40,7 @@ public class SetPeriodBox extends JFrame {
 
 		this.setBounds(400, 200, 480, 320);	
 		this.setPreferredSize(new Dimension(480, 320));
+		this.setTitle("수강 신청 기간 설정");
 		
 		this.nBoxType = this.SIGN_UP;
 		this.initData(dtSignUpStart, dtSignUpEnd, dtAccessStart, dtAccessEnd);
