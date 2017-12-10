@@ -1,4 +1,3 @@
-
 public class DBconf {
 	public static final String DB = "./DB/temp.db";
 	public static final String STUDENT_TABLE = "Student";
