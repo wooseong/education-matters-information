@@ -31,6 +31,25 @@ public class SubPageTop extends JPanel {
 		
 		this.logo = new JLabel(logoImage);
 		this.logo.setBounds(10, 10, 220, 50);
+		this.logo.addMouseListener(new MouseListener() {
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				master.getSubPage().changeBody(master.getSubPage().getDefaultPage());
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {}
+
+			@Override
+			public void mouseExited(MouseEvent e) {}
+		});
 		this.add(logo);
 		
 		this.userInfo = new JLabel("");

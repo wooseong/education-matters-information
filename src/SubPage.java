@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 
 import javax.swing.JPanel;
@@ -8,7 +9,7 @@ public class SubPage extends JPanel{
 
 	private JPanel top;
 	private JPanel left;
-	private JPanel body;
+	private Component body;
 
 	private SignUpAccessPage signUpAccessPage;
     private SearchLecture searchLecture;
@@ -18,7 +19,11 @@ public class SubPage extends JPanel{
     private InterestLectureAccessPage interestLectureAccessPage;
 	private AdminPage adminPage;
 	private ScholarPage scholarPage;
+	private EducationMattersSchedule defaultPage;
 	
+	public EducationMattersSchedule getDefaultPage() {
+		return defaultPage;
+	}
 	public ScholarPage getScholarPage() {
 		return scholarPage;
 	}
@@ -64,6 +69,7 @@ public class SubPage extends JPanel{
 	    interestLectureAccessPage = new InterestLectureAccessPage(this);
 		adminPage = new AdminPage();
 		scholarPage = new ScholarPage();
+		defaultPage = new EducationMattersSchedule();
 
 		this.left = new MenuPanel(this, User.isAdmin);
 		this.left.setBounds(0, 70, 250, 650);
@@ -82,7 +88,7 @@ public class SubPage extends JPanel{
 
 	}
 
-	public void changeBody(JPanel panel) {
+	public void changeBody(Component panel) {
 		this.remove(this.body);
 		this.body = panel;
 		this.body.setBounds(250, 70, 1030, 650);
