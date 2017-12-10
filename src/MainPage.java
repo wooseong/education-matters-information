@@ -17,6 +17,14 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+/**
+ * 프로그램 실행시 보여지는 첫번째 페이지
+ * 로그인 페이지
+ * 
+ * 로그인 기능, 학번 비밀번호 찾기 기능
+ * @author bang
+ *
+ */
 public class MainPage extends JPanel {
 
 	private Image img, resizeImage;
@@ -42,6 +50,7 @@ public class MainPage extends JPanel {
 
 		img = new ImageIcon("./image/mainbackground.png").getImage();
 
+		// 로그인 패널 위치
 		Point pt = new Point(600, 180);
 
 		listener = new LoginListener();
@@ -50,9 +59,6 @@ public class MainPage extends JPanel {
 		lblID.setBounds(pt.x - 20, pt.y, 110, 30);
 		lblID.setFont(baseFnt);
 		this.add(lblID);//패널에 추가
-
-		
-		
 		
 		jtfID = new JTextField(10);//ID TextField 생성
 		jtfID.setFont(inputFnt);

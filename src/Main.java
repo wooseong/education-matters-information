@@ -1,6 +1,11 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
+/**
+ * 프로젝트 드라이버 클래스
+ * @author bang
+ *
+ */
 public class Main {
 	
 	public static void main(String[] args) {

@@ -3,24 +3,36 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 
+/**
+ * 수강신청용 페이지
+ * 기능1 : 수업 목록 조회
+ * 기능2 : 선택된 수업 수강신청
+ * 기능3 : 개별 수강신청
+ * 기능4 : 수강신청 후 즉시 아래쪽 테이블 생성
+ * @author bang
+ *
+ */
 public class Applicationlecture extends JPanel{//수강신청 페이지
 
 	private JPanel						comboBoxPanel, applyJPanel, cancelJPanel;
+	
 	private JLabel 						yearLabel, departmentLabel, searchLabel, 
 										lectureNameLabel, classNumberLabel,
 										lectureNumberLabel, professorNameLabel,
 										classifyLabel, leftCreditLabel,
 										leftCreditNumberLabel;
+	
 	private JComboBox 					whatSearchCombo, classifyCombo;
+	
 	private JTextField					yearTextField, departmentTextField,
 										lectureNameTextField, classNumberTextField,
 										lectureNumberTextField, professorNameTextField;
+	
 	private JButton 					searchButton, applyAllLectureButton;
 	private searchActionListener 		searchAction;
 	private whatSearchActionListener 	whatSearchAction;
@@ -36,7 +48,8 @@ public class Applicationlecture extends JPanel{//수강신청 페이지
 
 		setBackground(new Color(0xEEDDDD));
 		setLayout(null);
-				
+		
+		// 상단 조회 부분 패널로 묶음
 		comboBoxPanel = new JPanel();
 		comboBoxPanel.setBounds(5, 5, 1020, 100);
 		comboBoxPanel.setBackground(new Color(0xEEEEEE));
@@ -84,6 +97,7 @@ public class Applicationlecture extends JPanel{//수강신청 페이지
 		lectureNumberLabel.setVisible(true);
 		comboBoxPanel.add(lectureNumberLabel);
 
+		// 학수번호 입력 란
 		lectureNumberTextField = new JTextField("");
 		lectureNumberTextField.setBounds(300, 60, 100, 25);
 		lectureNumberTextField.setFont(new Font("나눔고딕", Font.BOLD, 18));
@@ -96,6 +110,7 @@ public class Applicationlecture extends JPanel{//수강신청 페이지
 		classNumberLabel.setVisible(true);
 		comboBoxPanel.add(classNumberLabel);
 
+		// 분반 입력 란
 		classNumberTextField = new JTextField("");
 		classNumberTextField.setBounds(445, 60, 50, 25);
 		classNumberTextField.setEditable(true);
@@ -107,6 +122,7 @@ public class Applicationlecture extends JPanel{//수강신청 페이지
 		lectureNameLabel.setVisible(false);
 		comboBoxPanel.add(lectureNameLabel);
 
+		// 수업명 입력 란
 		lectureNameTextField = new JTextField("");
 		lectureNameTextField.setBounds(285, 60, 200, 25);
 		lectureNameTextField.setFont(new Font("나눔고딕", Font.BOLD, 18));
@@ -119,6 +135,7 @@ public class Applicationlecture extends JPanel{//수강신청 페이지
 		professorNameLabel.setVisible(false);
 		comboBoxPanel.add(professorNameLabel);
 
+		// 교수명 입력 
 		professorNameTextField = new JTextField("");
 		professorNameTextField.setBounds(285, 60, 100, 25);
 		professorNameTextField.setFont(new Font("나눔고딕", Font.BOLD, 18));
@@ -131,6 +148,7 @@ public class Applicationlecture extends JPanel{//수강신청 페이지
 		classifyLabel.setVisible(false);
 		comboBoxPanel.add(classifyLabel);
 
+		// 이수구분 선택 콤보박스
 		classifyCombo = new JComboBox();
 		classifyCombo.addItem("전체");
 		classifyCombo.addItem("전공필수");
@@ -148,6 +166,7 @@ public class Applicationlecture extends JPanel{//수강신청 페이지
 		searchButton.addActionListener(searchAction);
 		comboBoxPanel.add(searchButton);
 
+		// 조회된 수업 목록 나오는 패널
 		applyJPanel = new JPanel();
 		applyJPanel.setBounds(5, 110, 1020, 30);
 		applyJPanel.setLayout(null);
@@ -155,6 +174,7 @@ public class Applicationlecture extends JPanel{//수강신청 페이지
 		
 		checkBoxAction = new allLectureCheckBoxListener();
 		
+		// 하단 수업 전부 체크
 		checkAllLecture = new JCheckBox();
 		checkAllLecture.setBounds(25, 5, 20, 20);
 		checkAllLecture.addActionListener(checkBoxAction);
@@ -168,10 +188,13 @@ public class Applicationlecture extends JPanel{//수강신청 페이지
 		applyAllLectureButton.addActionListener(applyLectureAction);
 		applyJPanel.add(applyAllLectureButton);
 		
+		// 수업 목록 테이블
+		// 생성시에는 데이터 없지만 조회 후 데이터 생성
 		lecturetable = new SelfCreateTable();
 		lecturetable.setBounds(5, 140, 1020, 200);
 		this.add(lecturetable);
 
+		// 수강신청 된 수업 목록 보여주는 패널
 		cancelJPanel = new JPanel();
 		cancelJPanel.setBounds(5, 345, 1020, 50);
 		cancelJPanel.setLayout(null);
@@ -193,12 +216,19 @@ public class Applicationlecture extends JPanel{//수강신청 페이지
 		leftCreditNumberLabel = new JLabel("4");
 		leftCreditNumberLabel.setBounds(265, 25, 60, 20);
 		cancelJPanel.add(leftCreditNumberLabel);
-				
+		
+		// 신청 된 수업목록 보여주는 패널
 		mytable = new SelfCreateTable();
 		mytable.setBounds(5, 395, 1020, 200);
 		this.add(mytable);
 
 	}
+	
+	/**
+	 * 
+	 * @author wooseong
+	 *
+	 */
 	public class whatSearchActionListener implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
 			if(e.getSource() == whatSearchCombo)
@@ -293,6 +323,13 @@ public class Applicationlecture extends JPanel{//수강신청 페이지
 			}
 		}
 	}
+	
+	/**
+	 * 수업 검색 이벤트 핸들러
+	 * 쿼리 생성 후 조회된 데이터 테이블에 보여주는 형식
+	 * @author bang
+	 *
+	 */
 	public class searchActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			String 	stryear_semester	= (String) yearTextField.getText(); // 학기/년도
@@ -347,8 +384,14 @@ public class Applicationlecture extends JPanel{//수강신청 페이지
 			lecturetable.makeCheckboxTable(newStr, columName);
 			db.disconnectDB();
 
-			}
+		}
 	}
+
+	/**
+	 * 수업 전체 체크용 리스너
+	 * @author bang
+	 *
+	 */
 	public class allLectureCheckBoxListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			if(checkAllLecture.isSelected())
@@ -361,13 +404,20 @@ public class Applicationlecture extends JPanel{//수강신청 페이지
 			}
 		}
 	}
+
+	/**
+	 * 수강신청용 이벤트 리스너
+	 * 수강신청 후 하단 수강신청된 테이블에 신청 목록 업데이트해서 보여줌
+	 * @author bang
+	 *
+	 */
 	public class applyLectureListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			String[][] applyLectures = lecturetable.getChecked();
 			String 	stryear_semester	= (String) yearTextField.getText(); // 학기/년도
 			for(String[] temp:applyLectures) {
 				try {
-					System.out.println("1" + temp[2] + temp[3] + stryear_semester.substring(0, 6) + "4");
+					// 실제 수강신청하는 쿼리 실행하는 static 메소드
 					DBController.ClassEnroll("1", temp[2], temp[3], stryear_semester.substring(0, 6), "4");
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block

@@ -8,6 +8,11 @@ import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
+/**
+ * 엑셀파일 파싱 클래스
+ * @author bang
+ *
+ */
 public class XlsReader {
     private HSSFWorkbook workbook;
     private HSSFSheet sheet;
@@ -22,9 +27,16 @@ public class XlsReader {
         this.sheet = this.workbook.getSheetAt(0);
     }
 
+    /**
+     * need setFile(File)
+     */
     public XlsReader() {
         this(null);
     }
+    /**
+     * xls parser
+     * @param file	xls file to parsing
+     */
     public XlsReader(File file) {
         try {
             this.setFile(file);
@@ -34,6 +46,10 @@ public class XlsReader {
         }
     }
 
+    /**
+     * 실제 파싱 메소드
+     * @return String[][] 파싱된 데이터
+     */
     public String[][] parse(){
     	if(this.file == null) return null;
     	
