@@ -112,6 +112,8 @@ public class MainPage extends JPanel {
 							System.out.println("Student logged in");
 						}
 						
+						System.out.println("Default Page");
+						master.getSubPage().changeBody(master.getSubPage().getDefaultPage());
 						master.pageDirection(master.getSubPage());
 						jtfID.setText("");
 						jtfPW.setText("");
