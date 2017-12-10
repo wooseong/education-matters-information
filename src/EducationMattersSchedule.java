@@ -1,5 +1,10 @@
 import java.awt.Color;
 
+/**
+ * 학사일정조회 페이지 (디폴트 페이지)
+ * @author bang
+ *
+ */
 public class EducationMattersSchedule extends SelfCreateTable{
 
 	public EducationMattersSchedule() {
