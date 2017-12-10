@@ -10,6 +10,11 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+/**
+ * 테이블 자동 생성해주는 클래스
+ * @author bang
+ *
+ */
 public class SelfCreateTable extends JScrollPane {
 
     // 상수 선언
@@ -32,7 +37,10 @@ public class SelfCreateTable extends JScrollPane {
     public SelfCreateTable(String query)                        { this.makeTable(query); }
     public SelfCreateTable(Object[][] data, Object[] columName) { this.makeTable(data, columName); }
 
-    // method
+    /**
+     * 쿼리로 테이블 생성
+     * @param query	테이블에 불러올 쿼리
+     */
     public void makeTable(String query) {
         db = new DBController(DBconf.DB);
         db.executeQuery(query);
@@ -54,6 +62,11 @@ public class SelfCreateTable extends JScrollPane {
         this.setViewportView(this.table);
         db.disconnectDB();
     }
+    /**
+     * 실 데이터로 테이블 생성
+     * @param data		테이블 내용
+     * @param columName	테이블 컬럼 이름
+     */
     public void makeTable(Object[][] data, Object[] columName) {
 
         this.tableModel = new DefaultTableModel(data, columName);
@@ -66,6 +79,10 @@ public class SelfCreateTable extends JScrollPane {
         table.addMouseListener(listener);
         this.setViewportView(this.table);
     }
+    /**
+     * 테이블 모델로 테이블 생성
+     * @param tableModel	생성할 테이블 모델
+     */
     public void makeTable(DefaultTableModel tableModel) {
 
         this.tableModel = tableModel;
@@ -77,6 +94,11 @@ public class SelfCreateTable extends JScrollPane {
         this.setViewportView(this.table);
     }
 
+    /**
+     * 쿼리로 체크박스가 있는 테이블 생성
+     * 체크박스는 무조건 컬럼 인덱스 0번에 들어감
+     * @param query	테이블에 표시할 쿼리
+     */
     public void makeCheckboxTable(String query) {
         db = new DBController(DBconf.DB);
         db.executeQuery(query);
@@ -96,20 +118,25 @@ public class SelfCreateTable extends JScrollPane {
             public Class<?> getColumnClass(int column) {
                 switch(column) {
                 case 0:
-                    return Boolean.class;
+                    return Boolean.class;	// 여기서 체크박스로 처리가 됨
                 default:
                     return String.class;
                 }
             }
 
         };
-        this.table.getTableHeader().setReorderingAllowed(false);
+        this.table.getTableHeader().setReorderingAllowed(false);	// 컬럼 재배치 거부
 
         listener = new tableListener();
         table.addMouseListener(listener);
         this.setViewportView(this.table);
         db.disconnectDB();
     }
+    /**
+     * 실 데이터로 체크박스가 있는 테이블 생성
+     * @param data		테이블 내용
+     * @param columName	테이블 컬럼 이름
+     */
     public void makeCheckboxTable(Object[][] data, Object[] columName) {
 
         this.tableModel = new DefaultTableModel(data, columName);
@@ -119,8 +146,8 @@ public class SelfCreateTable extends JScrollPane {
             @Override
             public Class<?> getColumnClass(int column) {
                 switch(column) {
-                case 0:
-                    return Boolean.class;
+                case 0:						// 컬럼 0번째
+                    return Boolean.class;	// 여기서 체크박스가 설정 됨
                 default:
                     return String.class;
                 }
@@ -133,6 +160,10 @@ public class SelfCreateTable extends JScrollPane {
         table.addMouseListener(listener);
         this.setViewportView(this.table);
     }
+    /**
+     * 테이블 모델을 이용하여 체크박스가 있는 테이블 생성
+     * @param tableModel	생성하고자 하는 테이블 모델
+     */
     public void makeCheckboxTable(DefaultTableModel tableModel) {
 
         this.tableModel = tableModel;
@@ -141,8 +172,8 @@ public class SelfCreateTable extends JScrollPane {
             @Override
             public Class<?> getColumnClass(int column) {
                 switch(column) {
-                case 0:
-                    return Boolean.class;
+                case 0:						// 컬럼 인덱스 0
+                    return Boolean.class;	// 여기서 체크박스가 설정됨
                 default:
                     return String.class;
                 }
@@ -156,10 +187,12 @@ public class SelfCreateTable extends JScrollPane {
         this.setViewportView(this.table);
     }
 
+    // 테이블의 컬럼 이름을 안보이게 처리
     public void delColumnName() {
         this.table.setTableHeader(null);
     }
 
+    // 테이블에서 체크된 내용을 가져오는 메소드
     public String[][] getChecked(){
         int nCol = this.table.getColumnCount();
         int nRow = 0;
@@ -197,6 +230,7 @@ public class SelfCreateTable extends JScrollPane {
         return str;
     }
 
+    // 테이블에 버튼 처리를 하기위한 마우스 이벤트 리스너
     private class tableListener implements MouseListener{
 
         @Override
@@ -227,6 +261,12 @@ public class SelfCreateTable extends JScrollPane {
         public void mouseExited(MouseEvent e) {}
     }
 
+    /**
+     * 쿼리를 이용한 테이블 모델 생성하는 내부 클래스
+     * @param rs	ResultSet
+     * @return		DefaultTableModel
+     * @throws SQLException
+     */
     public static DefaultTableModel buildTableModel(ResultSet rs)
             throws SQLException {
 

@@ -5,6 +5,11 @@ import javax.swing.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * 수강신청 접근 페이지
+ * @author JM
+ *
+ */
 public class SignUpAccessPage extends AccessPage {
 
 	private JLabel	lblSignUpPeriod;			// 수강 신청 기간을 화면에 출력하는 Label

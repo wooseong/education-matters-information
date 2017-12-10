@@ -8,6 +8,11 @@ import java.sql.SQLException;
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 
+/**
+ * 수업목록 조회 페이지
+ * @author wooseong
+ *
+ */
 public class SearchLecture extends JPanel {
 
 	private JPanel comboBoxPanel;
@@ -36,6 +41,7 @@ public class SearchLecture extends JPanel {
 		yearLabel.setBounds(20, 20, 60, 20);
 		comboBoxPanel.add(yearLabel);
 
+		// 조회 항목 - 학기
 		yearCombo = new JComboBox();
 		yearCombo.addItem("2017/2학기");
 		yearCombo.addItem("2017/1학기");
@@ -56,6 +62,7 @@ public class SearchLecture extends JPanel {
 		classifyLabel.setBounds(20, 60, 60, 20);
 		comboBoxPanel.add(classifyLabel);
 
+		// 조회 항목 - 이수구
 		classifyCombo = new JComboBox();
 		classifyCombo.addItem("전체");
 		classifyCombo.addItem("전공필수");
@@ -68,6 +75,7 @@ public class SearchLecture extends JPanel {
 		lectureNameLabel.setBounds(240, 60, 60, 20);
 		comboBoxPanel.add(lectureNameLabel);
 
+		// 조회 항목 - 수업명
 		lectureNameTextField = new JTextField("");
 		lectureNameTextField.setBounds(310, 60, 230, 25);
 		lectureNameTextField.setEditable(true);
@@ -77,6 +85,7 @@ public class SearchLecture extends JPanel {
 		professorLabel.setBounds(570, 60, 50, 20);
 		comboBoxPanel.add(professorLabel);
 
+		// 조회 항목 - 교수 
 		professorTextField = new JTextField("");
 		professorTextField.setBounds(630, 60, 200, 25);
 		professorTextField.setEditable(true);
@@ -90,6 +99,8 @@ public class SearchLecture extends JPanel {
 		searchButton.addActionListener(searchAction);
 		comboBoxPanel.add(searchButton);
 
+		// 조회결과 출력 테이블
+		// 초기엔 아무런 데이터를 가지고 있지 않음
 		table = new SelfCreateTable();
 		table.setBounds(5, 110, 1020, 465);
 		this.add(table);
@@ -111,6 +122,7 @@ public class SearchLecture extends JPanel {
 				query = "select " + select + " from lecture where classify='" + strClassify + "' and  year='" + stryear_semester.substring(0, 6) + "' and name like '" + strLectureName + "%' and prof like '" + strProfessor + "%'";
 			}
 
+			// 테이블에 데이터 생성
 			table.makeTable(query);
 			}
 	}

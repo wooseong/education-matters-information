@@ -7,6 +7,11 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+/**
+ * xlsx 파일 파싱을 위한 클래스
+ * @author bang
+ *
+ */
 public class XlsxReader {
     private File file;
     private XSSFWorkbook workbook;
@@ -26,13 +31,24 @@ public class XlsxReader {
         this.sheet = this.workbook.getSheetAt(0);
     }
 
+    /**
+     * need setFile(File)
+     */
     public XlsxReader(){
         this(null);
     }
+    /**
+     * xlsx file parser
+     * @param file xlsx file to parsing
+     */
     public XlsxReader(File file){
         this.setFile(file);
     }
 
+    /**
+     * 실제 파싱 수행하는 메소드
+     * @return String[][] 파싱된 데이터
+     */
     public String[][] parse(){
         if(file == null) return null;
 

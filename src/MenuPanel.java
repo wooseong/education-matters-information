@@ -7,6 +7,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
+/**
+ * 서브페이지의 좌측 메뉴 패널
+ * @author bang
+ *
+ */
 public class MenuPanel extends JPanel {
 	private JLabel base1; // 강좌조회 및 수강신청탭
 	private JLabel base2; // 성적조회 탭
@@ -87,61 +92,52 @@ public class MenuPanel extends JPanel {
 		this.inner11 = new JLabel("강좌조회");
 		this.inner11.setBounds(this.base1Pt.x, this.base1Pt.y + height, width, height-1);
 		this.inner11.setHorizontalAlignment(SwingConstants.CENTER);
-//		this.inner11.setOpaque(true);
-//		this.inner11.setBackground(new Color(0x465680));
-//		this.inner11.setForeground(Color.white);
 		this.inner11.addMouseListener(menuListener);
 		
 		this.inner12 = new JLabel("관심과목설정");
 		this.inner12.setBounds(this.base1Pt.x, this.base1Pt.y + height*2, width, height-1);
 		this.inner12.setHorizontalAlignment(SwingConstants.CENTER);
-//		this.inner12.setOpaque(true);
-//		this.inner12.setBackground(new Color(0x465680));
-//		this.inner12.setForeground(Color.white);
 		this.inner12.addMouseListener(menuListener);
 		
 		this.inner13 = new JLabel("수강신청");
 		this.inner13.setBounds(this.base1Pt.x, this.base1Pt.y + height*3, width, height-1);
 		this.inner13.setHorizontalAlignment(SwingConstants.CENTER);
-//		this.inner13.setOpaque(true);
-//		this.inner13.setBackground(new Color(0x465680));
-//		this.inner13.setForeground(Color.white);
 		this.inner13.addMouseListener(menuListener);
 		
 		this.inner21 = new JLabel("기이수성적조회");
 		this.inner21.setBounds(this.base2Pt.x, this.base2Pt.y + height, width, height-1);
 		this.inner21.setHorizontalAlignment(SwingConstants.CENTER);
-//		this.inner21.setOpaque(true);
-//		this.inner21.setBackground(new Color(0x465680));
-//		this.inner21.setForeground(Color.white);
 		this.inner21.addMouseListener(menuListener);
 		
 		this.inner22 = new JLabel("당학기성적조회");
 		this.inner22.setBounds(this.base2Pt.x, this.base2Pt.y + height*2, width, height-1);
 		this.inner22.setHorizontalAlignment(SwingConstants.CENTER);
-//		this.inner22.setOpaque(true);
-//		this.inner22.setBackground(new Color(0x465680));
-//		this.inner22.setForeground(Color.white);
 		this.inner22.addMouseListener(menuListener);
 	}
 	
+	// 관리자 메뉴 보이게 하는 메소드
 	public void adminVisible(boolean isAdmin) {
 		this.base4.setVisible(isAdmin);
 	}
 	
+	// 메뉴 클릭시 이벤트
 	private class MenuListener implements MouseListener{
 
 		@Override
 		public void mouseClicked(MouseEvent e) {
 			// TODO Auto-generated method stub
 			JLabel event = (JLabel) e.getSource();
-			if(event == base1) {
+			if(event == base1) {	// 첫번째 메뉴 클릭시
+				// 두번째의 하부 메뉴 제거 후
 				remove(inner21);
 				remove(inner22);
 
+				// 하부 메뉴 추가
 				add(inner11);
 				add(inner12);
 				add(inner13);
+				
+				// 위치 수정
 				base2Pt.y = base1Pt.y + height*4;
 				base3Pt.y = base2Pt.y + height;
 				base4Pt.y = base3Pt.y + height;
@@ -149,23 +145,30 @@ public class MenuPanel extends JPanel {
 				base2.setBounds(base2Pt.x, base2Pt.y, width, height-1);
 				base3.setBounds(base3Pt.x, base3Pt.y, width, height-1);
 				base4.setBounds(base4Pt.x, base4Pt.y, width, height-1);
-			} else if(event == base2) {
+			} else if(event == base2) {	// 2번째 메뉴 클릭시
+				// 첫번째 메뉴의 하부 항목 제거
 				remove(inner11);
 				remove(inner12);
 				remove(inner13);
+				
+				// 하부 항목 위치 설정
 				base2Pt.y = base1Pt.y+height;
 				base2.setBounds(base2Pt.x, base2Pt.y, width, height-1);
 				
+				// 하부 항목 추가
 				inner21.setBounds(base2Pt.x, base2Pt.y + height, width, height-1);
 				add(inner21);
 				inner22.setBounds(base2Pt.x, base2Pt.y + height*2, width, height-1);
 				add(inner22);
 
+				// 위치 재설정
 				base3Pt.y = base2Pt.y + height*3;
 				base4Pt.y = base3Pt.y + height;
 				
 				base3.setBounds(base3Pt.x, base3Pt.y, width, height-1);
 				base4.setBounds(base4Pt.x, base4Pt.y, width, height-1);
+				
+			// 여기서부터는 실제 메뉴 클릭시 보여지는 페이지 변형하기 위한 이벤트
 			} else if(event == base3) { // 장학
 				subPage.getScholarPage().initPage();
 				subPage.changeBody(subPage.getScholarPage());
@@ -191,28 +194,16 @@ public class MenuPanel extends JPanel {
 		}
 
 		@Override
-		public void mousePressed(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
+		public void mousePressed(MouseEvent e) {}
 
 		@Override
-		public void mouseReleased(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
+		public void mouseReleased(MouseEvent e) {}
 
 		@Override
-		public void mouseEntered(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
+		public void mouseEntered(MouseEvent e) {}
 
 		@Override
-		public void mouseExited(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
+		public void mouseExited(MouseEvent e) {}
 		
 	}
 }
