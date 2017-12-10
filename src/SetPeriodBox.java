@@ -258,6 +258,7 @@ public class SetPeriodBox extends JFrame {
 
 			if(obj == btnSet) {		// 설정 버튼
 				resetPeriod();			// 변경된 기간 설정
+				dispose();
 			}else {					// 종료 버튼
 				String[] buttons = {"저장한 후 종료", "저장하지 않고 종료", "취소"};
 				int result = JOptionPane.showOptionDialog(null, "종료하시겠습니까?", "", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, buttons, "저장한 후 종료");
