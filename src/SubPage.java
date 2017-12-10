@@ -14,6 +14,7 @@ public class SubPage extends JPanel{
 	private SignUpAccessPage signUpAccessPage;
     private SearchLecture searchLecture;
     private CompletionLectureMarks completionLectureMarks;
+    private CurrentLectureMarks currentLectureMarks;
     private Applicationlecture applicationlecture;
     private InterestLecture interestLecture;
     private InterestLectureAccessPage interestLectureAccessPage;
@@ -21,6 +22,9 @@ public class SubPage extends JPanel{
 	private ScholarPage scholarPage;
 	private EducationMattersSchedule defaultPage;
 	
+	public CurrentLectureMarks getCurrentLectureMarks() {
+		return currentLectureMarks;
+	}
 	public EducationMattersSchedule getDefaultPage() {
 		return defaultPage;
 	}
@@ -70,6 +74,7 @@ public class SubPage extends JPanel{
 		adminPage = new AdminPage();
 		scholarPage = new ScholarPage();
 		defaultPage = new EducationMattersSchedule();
+		currentLectureMarks = new CurrentLectureMarks();
 
 		this.left = new MenuPanel(this, User.isAdmin);
 		this.left.setBounds(0, 70, 250, 650);

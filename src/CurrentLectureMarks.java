@@ -1,26 +1,23 @@
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
-public class CompletionLectureMarks extends JPanel {
+public class CurrentLectureMarks extends JPanel {
 	private JPanel 			informationPanel;
 	private JLabel 			IDLabel, nameLabel, birthLabel, enterLabel, 
-							collegeDepGradeLabel, isPauseLabel;
+							collegeDepGradeLabel;
 	
 	private JTextField		IDTextField, nameTextField, birthTextField, enterTextField,
-							collegeDepGradeTextField, isPauseTextField;
+							collegeDepGradeTextField;
 	
-	public CompletionLectureMarks() {
+	private SelfCreateTable table;
+	
+	public CurrentLectureMarks() {
 		setPreferredSize(new Dimension(1030, 570));
 
 		setBackground(new Color(0xEEDDDD));
@@ -78,13 +75,27 @@ public class CompletionLectureMarks extends JPanel {
 		collegeDepGradeTextField.setEditable(false);
 		informationPanel.add(collegeDepGradeTextField);
 
-		//enterLabel, collegeLabel, DepLabel, GradeLabel, isPauseLabel;
-		}
+		table = new SelfCreateTable();
+		table.setBounds(5, 110, 1020, 535);
+		this.add(table);
+	}
+	
 	public void init() {
 		this.birthTextField.setText(User.BIRTH);
 		this.collegeDepGradeTextField.setText(User.COLLEGE + "  " + User.MAJOR + "  " + User.GRADE);
 		this.enterTextField.setText(User.ENTER);
 		this.IDTextField.setText(User.LOGINID);
 		this.nameTextField.setText(User.USERNAME);
+		
+		String query = "select '2017/2', `2017/2`.lecture, `2017/2`.class, `lecture`.name, `2017/2`.midterm, `2017/2`.final, `2017/2`.score ";
+		query		+= "from `2017/2` inner join `lecture` on `2017/2`.lecture=`lecture`.number ";
+		query		+="where `2017/2`.id='" + User.LOGINID + "'";
+		
+		this.table.makeTable(query);
+		
+		String[] colum = {"연도", "학수번호", "분반", "수업명", "중간고사", "기말고사", "학점"};
+		for(int i=0; i<colum.length; i++) {
+			this.table.getTable().getColumnModel().getColumn(i).setHeaderValue(colum[i]);
+		}
 	}
 }

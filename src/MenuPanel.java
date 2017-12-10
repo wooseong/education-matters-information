@@ -183,7 +183,8 @@ public class MenuPanel extends JPanel {
 				subPage.getCompletionLectureMarks().init();
 				subPage.changeBody(subPage.getCompletionLectureMarks());
 			} else if(event == inner22) {	// 당학시 성적조회
-//				subPage.changeBody(subPage.getLectureMarks());
+				subPage.getCurrentLectureMarks().init();
+				subPage.changeBody(subPage.getCurrentLectureMarks());
 			}
 
 			repaint();
