@@ -167,11 +167,12 @@ public class MenuPanel extends JPanel {
 				base3.setBounds(base3Pt.x, base3Pt.y, width, height-1);
 				base4.setBounds(base4Pt.x, base4Pt.y, width, height-1);
 			} else if(event == base3) { // 장학
-//				subPage.changeBody(subPage.getScolarPage());
+				subPage.getScholarPage().initPage();
+				subPage.changeBody(subPage.getScholarPage());
 			} else if(event == base4) { // 관리자페이지
 				subPage.changeBody(subPage.getAdminPage());
 			} else if(event == inner11) {	// 수업목록
-//				subPage.changeBody(subPage.getLecturePage());
+				subPage.changeBody(subPage.getSearchLecture());
 			} else if(event == inner12) {	// 관심과목
 				subPage.getInterestLectureAccessPage().setButtonVisible();
 				subPage.changeBody(subPage.getInterestLectureAccessPage());

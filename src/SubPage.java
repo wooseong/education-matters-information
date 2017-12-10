@@ -17,7 +17,11 @@ public class SubPage extends JPanel{
     private InterestLecture interestLecture;
     private InterestLectureAccessPage interestLectureAccessPage;
 	private AdminPage adminPage;
-
+	private ScholarPage scholarPage;
+	
+	public ScholarPage getScholarPage() {
+		return scholarPage;
+	}
 	public SignUpAccessPage getSignUpAccessPage() {
 		return signUpAccessPage;
 	}
@@ -59,6 +63,7 @@ public class SubPage extends JPanel{
 	    interestLecture = new InterestLecture();
 	    interestLectureAccessPage = new InterestLectureAccessPage(this);
 		adminPage = new AdminPage();
+		scholarPage = new ScholarPage();
 
 		this.left = new MenuPanel(this, User.isAdmin);
 		this.left.setBounds(0, 70, 250, 650);
