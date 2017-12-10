@@ -151,6 +151,7 @@ public class MainPage extends JPanel {
 							System.out.println("Student logged in");//학생로그를 찍는다
 						}
 						
+						master.getSubPage().changeBody(master.getSubPage().getDefaultPage());
 						master.pageDirection(master.getSubPage());  //SubPage로이동
 						jtfID.setText("");
 						jtfPW.setText("");
