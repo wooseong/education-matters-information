@@ -11,7 +11,7 @@ create table 'student' (
     'major'         varchar(15) null,   --전공
     'grade'         varchar(15) null,   --학년
     'status'        varchar(15) null,    --휴복학 상태
-    'isAdmin'       varchar(6) 'false'
+    'isAdmin'       varchar(6)  default 'false'
 );
 
 CREATE TABLE 'lecture' (
@@ -37,6 +37,13 @@ CREATE TABLE 'interest' (
     'class'         varchar(15) null    --분반
 );
 
+CREATE TABLE 'scholar' (
+    'id'            varchar(15) null,       --학번
+    'content'       varchar(15) null,       --장학 내용
+    'money'         int         not null,   --금액
+    'when'          varchar(15) null        --받은 날짜
+);
+
 CREATE TABLE '2017/2' (
     'id'            varchar(15) null,   --학번
     'lecture'       varchar(15) null,   --수업번호
@@ -58,7 +65,7 @@ CREATE TABLE '2017/1' (
 );
 
 insert into 'student' values (
-    '1501117',
+    '15011107',
     '960410',
     '방일섭',
     '1996.04.10',
@@ -208,4 +215,11 @@ INSERT INTO 'interest' VALUES(
     '1',
     '001111',
     '001'
+);
+
+INSERT INTO 'scholar' VALUES (
+    '15011107',
+    '심심해서 주는 장학금',
+    '100',
+    '2017.12.09'
 );
