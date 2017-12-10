@@ -1,4 +1,3 @@
-
 public class User {
 	public static String LOGINID = "";
 	public static String USERNAME = "";
