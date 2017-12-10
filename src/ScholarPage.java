@@ -4,7 +4,6 @@ import javax.swing.JPanel;
 public class ScholarPage extends JPanel {
 	private JLabel name;
 	private SelfCreateTable table;
-	private DBController db;
 	
 	public ScholarPage() {
 		this.setLayout(null);
