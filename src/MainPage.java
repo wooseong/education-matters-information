@@ -112,12 +112,10 @@ public class MainPage extends JPanel {
 							System.out.println("Student logged in");
 						}
 						
-						System.out.println("Default Page");
 						master.getSubPage().changeBody(master.getSubPage().getDefaultPage());
 						master.pageDirection(master.getSubPage());
 						jtfID.setText("");
 						jtfPW.setText("");
-//						JOptionPane.showMessageDialog(btnLogin, "로그인 성공!");
 					}
 					else {
 						JOptionPane.showMessageDialog(btnLogin, "학번 혹은 비밀번호가 틀립니다.");
