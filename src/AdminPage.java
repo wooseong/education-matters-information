@@ -14,13 +14,21 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+/**
+ * 관리자 페이지
+ * 기능1 : 엑셀파일 불러와서 보여주기 (csv, xls, xlsx 가능)
+ * 기능2 : 학생 데이터베이스에 엑셀파일 추가
+ * 기능3 : 수업 데이터베이스에 엑셀파일 추가
+ * @author bang
+ *
+ */
 public class AdminPage extends JPanel {
-	private SelfCreateTable table;
-	private JButton newStudent;
-	private JButton newLecture;
-	private JButton openFile;
-	private JFileChooser filechooser;
-	private File file;
+	private SelfCreateTable table;				// 엑셀 보여줄 테이블
+	private JButton newStudent;					// 학생 추가 버튼
+	private JButton newLecture;					// 수업 추가 버튼
+	private JButton openFile;					// 파일 열기 버튼
+	private JFileChooser filechooser;			// 파일 열기 대화창
+	private File file;							// 열 파일
 	private ButtonListener buttonListener;
     
     private String[][] data;
@@ -38,7 +46,7 @@ public class AdminPage extends JPanel {
         filechooser.setCurrentDirectory(new File("."));
         filechooser.setDialogTitle("Open File");
         filechooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
-        filechooser.setFileFilter(new FileNameExtensionFilter("Excel File", "csv", "xls","xlsx"));
+        filechooser.setFileFilter(new FileNameExtensionFilter("Excel File", "csv", "xls","xlsx"));	// 열 수 있는 파일 설정
         filechooser.setVisible(true);
 
         newStudent = new JButton("학생 추가");
@@ -51,6 +59,7 @@ public class AdminPage extends JPanel {
         newLecture.addActionListener(buttonListener);
         this.add(newLecture);
 
+        // 초기에는 테이블에 데이터 없다가 파일이 열렸을 때 데이터 생성
         table = new SelfCreateTable();
         table.setBounds(10, 40, 1010, 600);
         this.add(table);
